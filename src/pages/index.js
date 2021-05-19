@@ -23,7 +23,15 @@ const IndexPage = () => (
         alt="A Gatsby astronaut"
         style={{ marginBottom: `1.45rem` }}
       /> */}
-      <Card></Card>
+      <Card
+        title="How to be a man"
+        readtime="4"
+        excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Accusamus officia aut quaerat veniam sunt corporis corrupti sequi
+      ex quam non abi eleyi o bgo ni?"
+        date="april 16, 2020"
+        imageurl=""
+      ></Card>
       <Card></Card>
       <Card></Card>
       {/* <p>

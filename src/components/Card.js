@@ -90,6 +90,7 @@ const CardBottomContent = styled.div`
 
 const DateButton = styled.div`
   display: flex;
+  align-items: center;
 `;
 const Date = styled.small`
   text-transform: capitalize;

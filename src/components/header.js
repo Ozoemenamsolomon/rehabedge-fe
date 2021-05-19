@@ -6,17 +6,18 @@ import HamburgerMenu from "./HamburgerMenu";
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `#2f4293`,
       marginBottom: `1.45rem`,
     }}
   >
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        maxWidth: `96%`,
+        padding: `1rem 0rem`,
         display: `flex`,
         justifyContent: `space-between`,
+        alignItems: `center`,
       }}
     >
       <h1 style={{ margin: 0 }}>
@@ -27,7 +28,8 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+          {/* {siteTitle} */}
+          RehabEdge
         </Link>
       </h1>
       <HamburgerMenu></HamburgerMenu>
