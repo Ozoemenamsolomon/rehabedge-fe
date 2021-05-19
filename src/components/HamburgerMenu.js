@@ -4,7 +4,7 @@ import styled from "styled-components";
 const HamburgerMenu = ({ size, colour }) => {
   return (
     <Menu>
-      <div class="line"></div>
+      <Line></Line>
     </Menu>
   );
 };
@@ -29,4 +29,14 @@ const Menu = styled.button`
   border: none;
   border-radius: 35%;
   overflow: hidden;
+`;
+
+const Line = styled.div`
+  background-color: var(--fg-color);
+  width: 75%;
+  height: 10%;
+  border-radius: calc(var(--menu-size) / 20);
+  position: relative;
+  display: flex;
+  transition: all var(--animation-duration) ease-in;
 `;
