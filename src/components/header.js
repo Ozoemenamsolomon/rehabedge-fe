@@ -2,6 +2,7 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import HamburgerMenu from "./HamburgerMenu";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Header = ({ siteTitle }) => (
   <header
@@ -16,25 +17,28 @@ const Header = ({ siteTitle }) => (
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: `96%`,
+        maxWidth: `90%`,
         padding: `1rem 0rem`,
         display: `flex`,
         justifyContent: `space-between`,
         alignItems: `center`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {/* {siteTitle} */}
-          RehabEdge
-        </Link>
-      </h1>
+      <Link
+        to="/"
+        style={{
+          color: `white`,
+          textDecoration: `none`,
+        }}
+      >
+        <StaticImage
+          src="../images/rehabedge-icon.png"
+          width={211.65354331}
+          quality={95}
+          formats={["AUTO", "WEBP", "AVIF"]}
+          alt="A Gatsby astronaut"
+        />
+      </Link>
       <HamburgerMenu></HamburgerMenu>
     </div>
   </header>
