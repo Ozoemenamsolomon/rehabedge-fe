@@ -27,7 +27,13 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
 
-      <main>{children}</main>
+      <main
+        style={{
+          marginTop: `7rem`,
+        }}
+      >
+        {children}
+      </main>
       <footer
         style={{
           marginTop: `2rem`,

@@ -6,6 +6,7 @@ const PageWrapper = ({ children }) => {
       style={{
         margin: `0 auto`,
         maxWidth: 1200,
+        minHeight: `100vh`,
         padding: `0 1.0875rem 1.45rem`,
       }}
     >

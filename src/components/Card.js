@@ -47,6 +47,11 @@ const CardDiv = styled.div`
   flex-direction: column;
   overflow: hidden;
   text-align: left;
+  transition: all 0.3s ease-in-out;
+  &:hover:not(CardBottom) {
+    transform: scale(1.035);
+    box-shadow: 10px 15px 13px rgb(0 0 0 / 11%);
+  }
 `;
 const CardTop = styled.div`
   border-radius: 10px;
@@ -56,6 +61,8 @@ const CardTop = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
+  min-height: 8em;
+  max-height: 10em;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
