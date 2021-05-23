@@ -5,6 +5,7 @@ const HamburgerMenu = ({ size, colour }) => {
   return (
     <Menu>
       <Line></Line>
+      <ButtonName>Menu button</ButtonName>
     </Menu>
   );
 };
@@ -68,4 +69,7 @@ const Line = styled.div`
     bottom: 0%;
     transform: translatex(-100%) rotate(-315deg);
   }
+`;
+const ButtonName = styled.span`
+  display: none;
 `;
