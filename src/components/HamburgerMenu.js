@@ -26,6 +26,7 @@ const Menu = styled.button`
   border: none;
   border-radius: 35%;
   overflow: hidden;
+  position: relative;
 `;
 
 const Line = styled.div`
@@ -59,18 +60,21 @@ const Line = styled.div`
 
   ${Menu}:focus & {
     background-color: transparent;
-    transform: translatex(100%);
+    transform: translatey(500%);
   }
   ${Menu}:focus &::before {
-    transform: translatex(-100%) rotate(315deg);
+    transform: translatey(-500%) rotate(315deg);
     top: 0%;
   }
   ${Menu}:focus &::after {
     bottom: 0%;
-    transform: translatex(-100%) rotate(-315deg);
+    transform: translatey(-500%) rotate(-315deg);
   }
 `;
 const ButtonName = styled.span`
-  content-visibility: hidden;
+  position: absolute;
+  z-index: -2;
 `;
-// display: none;
+/*display: none;
+ color: aliceblue;
+  content-visibility: hidden; */
