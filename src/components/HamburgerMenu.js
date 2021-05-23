@@ -71,5 +71,6 @@ const Line = styled.div`
   }
 `;
 const ButtonName = styled.span`
-  display: none;
+  content-visibility: hidden;
 `;
+// display: none;
