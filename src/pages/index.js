@@ -7,6 +7,7 @@ import Seo from "../components/seo";
 
 import PageWrapper from "../components/PageWrapper";
 import CardsSection from "../components/CardsSection";
+import FeaturedCard from "../components/FeaturedCard";
 // import styled from "styled-components";
 
 const IndexPage = () => (
@@ -24,6 +25,7 @@ const IndexPage = () => (
         alt="A Gatsby astronaut"
         style={{ marginBottom: `1.45rem` }}
       /> */}
+      <FeaturedCard></FeaturedCard>
       <CardsSection></CardsSection>
       {/* <p>
         <Link to="/page-2/">Go to page 2</Link> <br />

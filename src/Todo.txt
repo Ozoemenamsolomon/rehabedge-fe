@@ -1,0 +1,7 @@
+
+
+
+- design the featured card and in swiperjs
+- configure graphql in strapi
+- implement dynamic images for the cards
+- graphql from gatsby import in the card section

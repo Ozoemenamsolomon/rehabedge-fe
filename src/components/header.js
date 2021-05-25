@@ -58,6 +58,7 @@ const Header = ({ siteTitle }) => {
             src="../images/rehabedge-icon.png"
             width={211.65354331}
             quality={95}
+            placeholder="tracedSVG"
             formats={["AUTO", "WEBP", "AVIF"]}
             alt="RehabEdge Logo | Home"
           />
