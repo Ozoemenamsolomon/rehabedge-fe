@@ -8,6 +8,7 @@ import Seo from "../components/seo";
 import PageWrapper from "../components/PageWrapper";
 import CardsSection from "../components/CardsSection";
 import FeaturedCard from "../components/FeaturedCard";
+import FeaturedCardsSwiper from "../components/FeaturedCardsSwiper";
 // import styled from "styled-components";
 
 const IndexPage = () => (
@@ -25,6 +26,7 @@ const IndexPage = () => (
         alt="A Gatsby astronaut"
         style={{ marginBottom: `1.45rem` }}
       /> */}
+      <FeaturedCardsSwiper></FeaturedCardsSwiper>
       <FeaturedCard></FeaturedCard>
       <CardsSection></CardsSection>
       {/* <p>
