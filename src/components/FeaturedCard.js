@@ -14,4 +14,5 @@ export default FeaturedCard;
 const FeaturedWrapper = styled.div`
   min-height: 40em;
   background-color: green;
+  width: 100;
 `;
