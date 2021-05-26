@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import HamburgerMenu from "./HamburgerMenu";
 import { StaticImage } from "gatsby-plugin-image";
+import styled from "styled-components";
 
 const Header = ({ siteTitle }) => {
   // determined if page has scrolled and if the view is on mobile
@@ -26,17 +27,7 @@ const Header = ({ siteTitle }) => {
     };
   }, [scrolled]);
   return (
-    <header
-      data-active={scrolled}
-      style={{
-        background: `#2f4293`,
-        marginBottom: `1.45rem`,
-        position: `fixed`,
-        minWidth: `100%`,
-        top: 0,
-        zIndex: 2,
-      }}
-    >
+    <MyHeader data-active={scrolled}>
       <div
         style={{
           margin: `0 auto`,
@@ -65,7 +56,7 @@ const Header = ({ siteTitle }) => {
         </Link>
         <HamburgerMenu></HamburgerMenu>
       </div>
-    </header>
+    </MyHeader>
   );
 };
 
@@ -78,3 +69,18 @@ Header.defaultProps = {
 };
 
 export default Header;
+
+const MyHeader = styled.header`
+  background: #2f4293;
+  margin-bottom: 1.45rem;
+  position: fixed;
+  min-width: 100%;
+  top: 0;
+  z-index: 2;
+
+  &[data-active="true"] {
+    -webkit-box-shadow: 0px 5px 7px 0px rgb(0 0 0 / 40%);
+    box-shadow: 0px 5px 7px 0px rgb(0 0 0 / 40%);
+  }
+`;
+// style={{ }}   box-shadow: 0 2px 8px rgba(152,168,188,.2);

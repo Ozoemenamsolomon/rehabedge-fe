@@ -50,8 +50,8 @@ export default CardsSection;
 
 const CardsWrapper = styled.section`
   display: flex;
-  gap: 1em;
+  gap: 1.5em;
   flex-wrap: wrap;
-  padding-top: 1em;
+  padding-top: 1.5em;
   justify-content: center;
 `;

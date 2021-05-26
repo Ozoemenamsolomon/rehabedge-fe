@@ -1,18 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const FeaturedCard = () => {
-  return (
-    <FeaturedWrapper>
-      <p>jkdfbvdfhjkbfx</p>
-    </FeaturedWrapper>
-  );
+const FeaturedCard = props => {
+  return <FeaturedWrapper>{props.children}</FeaturedWrapper>;
 };
 
 export default FeaturedCard;
 
 const FeaturedWrapper = styled.div`
-  min-height: 40em;
+  min-height: 30em;
   background-color: green;
-  width: 100;
 `;
