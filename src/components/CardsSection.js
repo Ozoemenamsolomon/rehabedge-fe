@@ -8,12 +8,18 @@ const CardsSection = () => {
     <CardsWrapper>
       <Card
         title="How to be a man"
-        readtime="4"
+        readtime="hjadg"
         excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
         date="april 16, 2020"
         imageurl=""
       ></Card>
-      <Card></Card>
+      <Card
+        title="How to be a woman"
+        readtime="hjadg"
+        excerpt="jhdfgh\15"
+        date="april 16, 2020"
+        imageurl=""
+      ></Card>
       <Card></Card>
       <Card
         title="How to be a man"

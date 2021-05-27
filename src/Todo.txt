@@ -5,3 +5,5 @@
 - configure graphql in strapi
 - implement dynamic images for all cards
 - graphql from gatsby import in the card section
+
+- why is my prop-types now working bayi?

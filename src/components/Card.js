@@ -1,42 +1,45 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Link } from "gatsby";
 
 const Card = props => {
   return (
-    <>
-      <CardDiv>
-        <CardTop>
-          <CardTitle>
-            <CardTitleH3>{props.title || "Please add a title"}</CardTitleH3>
-            <span>
-              <ReadTime>
-                {props.readtime
-                  ? `${props.readtime} mins read`
-                  : "Please include the readtime"}
-              </ReadTime>
-            </span>
-          </CardTitle>
-        </CardTop>
-        <CardBottom>
-          <CardBottomContent>
-            <p>{props.excerpt || "Please include an excerpt"}</p>
-            <DateButton>
-              <Date>{props.date || "forgot the date?"}</Date>
+    <CardDiv>
+      <CardTop>
+        <CardTitle>
+          <CardTitleH3>{props.title || "Please add a title"}</CardTitleH3>
+          <span>
+            <ReadTime>
+              {props.readtime
+                ? `${props.readtime} mins read`
+                : "Please include the readtime"}
+            </ReadTime>
+          </span>
+        </CardTitle>
+      </CardTop>
+      <CardBottom>
+        <CardBottomContent>
+          <p>{props.excerpt || "Please include an excerpt"}</p>
+          <DateButton>
+            <Date>{props.date || "forgot the date?"}</Date>
+            <Link to="/" style={{ textDecoration: `none`, color: `#000` }}>
               <CardBottomContentButton>Read More</CardBottomContentButton>
-            </DateButton>
-          </CardBottomContent>
-        </CardBottom>
-      </CardDiv>
-    </>
+            </Link>
+          </DateButton>
+        </CardBottomContent>
+      </CardBottom>
+    </CardDiv>
   );
 };
 
 export default Card;
 
 Card.propTypes = {
+  excerpt: PropTypes.string,
   readtime: PropTypes.number,
 };
+
 const CardDiv = styled.div`
   width: 17em;
   background-color: #fff;
@@ -98,13 +101,13 @@ const CardBottomContent = styled.div`
 const DateButton = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 const Date = styled.small`
   text-transform: capitalize;
 `;
 const CardBottomContentButton = styled.button`
   padding: 0.6em 0.5em;
-  margin-left: auto;
   background-color: #2f4293;
   border: none;
   color: #fff;
