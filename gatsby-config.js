@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: "http://localhost:1337",
+        apiURL: "http://localhost:1337" || "https://rehabedge-be.herokuapp.com",
         collectionTypes: ["article", "category"],
         queryLimit: 1000,
       },
