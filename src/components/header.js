@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => {
   }, [scrolled]);
   return (
     <MyHeader data-active={scrolled}>
-      <HeaderWrapper style={{}}>
+      <HeaderWrapper>
         <Link
           to="/"
           style={

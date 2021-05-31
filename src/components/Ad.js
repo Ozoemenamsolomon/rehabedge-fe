@@ -17,4 +17,7 @@ const AdWrapper = styled.div`
   background-color: black;
   align-self: center;
   width: clamp(50%, 71em, 100%);
+  display: grid;
+  place-content: center;
+  color: #fff;
 `;

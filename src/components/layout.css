@@ -4,11 +4,11 @@
   box-sizing: border-box;
 }
 
+/*
 header[data-active="true"] {
   box-shadow: 0 2px 8px rgba(152, 168, 188, 0.2);
 }
-
-/* html {
+ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font: 112.5%/1.45em georgia, serif, sans-serif;

@@ -28,7 +28,7 @@ const IndexPage = () => (
       </p>
       /> */}
       <FeaturedCardsSwiper></FeaturedCardsSwiper>
-      <Ad></Ad>
+      <Ad>AD Belongs Here!</Ad>
       <CardsSection></CardsSection>
     </PageWrapper>
   </Layout>

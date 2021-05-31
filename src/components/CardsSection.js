@@ -2,13 +2,11 @@ import React from "react";
 
 import Card from "../components/Card";
 import styled from "styled-components";
+import Section from "./Section";
 
 const CardsSection = () => {
   return (
-    <CardsWrapper>
-      <SectionTitleWrapper>
-        <SectionTitle>Recent</SectionTitle>
-      </SectionTitleWrapper>
+    <Section>
       <CardsDiv>
         <Card
           title="How to be a man"
@@ -53,23 +51,12 @@ const CardsSection = () => {
         ></Card>
         <Card></Card>
       </CardsDiv>
-    </CardsWrapper>
+    </Section>
   );
 };
 
 export default CardsSection;
 
-const CardsWrapper = styled.section`
-  padding-top: 2.5em;
-`;
-
-const SectionTitleWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-const SectionTitle = styled.h3`
-  text-transform: uppercase;
-`;
 const CardsDiv = styled.div`
   padding-top: 1.5em;
   display: flex;
