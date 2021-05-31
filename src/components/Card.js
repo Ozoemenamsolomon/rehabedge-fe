@@ -54,7 +54,7 @@ const CardDiv = styled.div`
   
   /* mouse, touch pad */
   @media (hover: hover) and (pointer: fine) {
-    &:hover:not(p):not(span):not(small):not(button) {
+    &:hover{
       transform: scale(1.035);
       box-shadow: 10px 15px 13px rgb(0 0 0 / 11%);
   }
@@ -67,8 +67,7 @@ const CardTop = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
-  min-height: 8em;
-  max-height: 10em;
+  height: clamp(8em, 9em, 10em);
   display: flex;
   justify-content: flex-end;
   flex-direction: column;

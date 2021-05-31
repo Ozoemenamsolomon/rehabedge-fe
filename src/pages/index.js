@@ -8,6 +8,7 @@ import Seo from "../components/seo";
 import PageWrapper from "../components/PageWrapper";
 import CardsSection from "../components/CardsSection";
 import FeaturedCardsSwiper from "../components/FeaturedCardsSwiper";
+import Ad from "../components/Ad";
 // import styled from "styled-components";
 
 const IndexPage = () => (
@@ -27,6 +28,7 @@ const IndexPage = () => (
       </p>
       /> */}
       <FeaturedCardsSwiper></FeaturedCardsSwiper>
+      <Ad></Ad>
       <CardsSection></CardsSection>
     </PageWrapper>
   </Layout>

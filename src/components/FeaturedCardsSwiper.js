@@ -31,22 +31,41 @@ const FeaturedCardsSwiper = () => {
       style={{
         borderRadius: `15px`,
         boxShadow: `-9px -7px 15px rgba(0, 0, 0, 0.11)`,
+        margin: `0em 0em 3em 0`,
       }}
     >
       <SwiperSlide>
-        <FeaturedCard>Slide 1</FeaturedCard>
+        <FeaturedCard
+          title="How to be a man"
+          readtime="hjadg"
+          excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
+          date="april 16, 2020"
+          imageurl=""
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <FeaturedCard>Slide 2</FeaturedCard>
+        <FeaturedCard />
       </SwiperSlide>
       <SwiperSlide>
-        <FeaturedCard>Slide 3</FeaturedCard>
+        <FeaturedCard
+          title="How to be a man"
+          readtime="hjadg"
+          excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
+          date="april 16, 2020"
+          imageurl=""
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <FeaturedCard>Slide 4</FeaturedCard>
+        <FeaturedCard />
       </SwiperSlide>
       <SwiperSlide>
-        <FeaturedCard>Slide 5</FeaturedCard>
+        <FeaturedCard
+          title="How to be a man"
+          readtime="hjadg"
+          excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
+          date="april 16, 2020"
+          imageurl=""
+        />
       </SwiperSlide>
     </Swiper>
   );

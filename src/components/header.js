@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import HamburgerMenu from "./HamburgerMenu";
+// import HamburgerMenu from "./HamburgerMenu";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
@@ -28,22 +28,15 @@ const Header = ({ siteTitle }) => {
   }, [scrolled]);
   return (
     <MyHeader data-active={scrolled}>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `90%`,
-          padding: `1rem 0rem`,
-          display: `flex`,
-          justifyContent: `space-between`,
-          alignItems: `center`,
-        }}
-      >
+      <HeaderWrapper style={{}}>
         <Link
           to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+          style={
+            {
+              // color: `white`,
+              // textDecoration: `none`,
+            }
+          }
         >
           <StaticImage
             src="../images/rehabedge-icon.png"
@@ -54,12 +47,14 @@ const Header = ({ siteTitle }) => {
             alt="RehabEdge Logo | Home"
           />
         </Link>
-        <HamburgerMenu></HamburgerMenu>
-      </div>
+      </HeaderWrapper>
     </MyHeader>
   );
 };
+/*
+        <HamburgerMenu ></HamburgerMenu>
 
+*/
 Header.propTypes = {
   siteTitle: PropTypes.string,
 };
@@ -84,3 +79,12 @@ const MyHeader = styled.header`
   }
 `;
 // style={{ }}   box-shadow: 0 2px 8px rgba(152,168,188,.2);
+
+const HeaderWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 90%;
+  padding: 1rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
