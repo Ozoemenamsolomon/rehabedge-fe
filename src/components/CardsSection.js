@@ -16,7 +16,7 @@ const CardsSection = () => {
       <Card
         title="How to be a woman"
         readtime="hjadg"
-        excerpt="jhdfgh\15"
+        excerpt="jhdfgh15"
         date="april 16, 2020"
         imageurl=""
       ></Card>

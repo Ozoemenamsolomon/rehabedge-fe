@@ -22,7 +22,7 @@ const FeaturedCardsSwiper = () => {
       slidesPerView={1}
       autoplay={{
         delay: 4500,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       }}
       pagination={{
         clickable: true,

@@ -7,7 +7,7 @@ const FeaturedCard = props => {
   return (
     <FeaturedWrapper>
       <CardDiv>
-        <CardTop>
+        <CardLeft>
           <CardTitle>
             <CardTitleH3>{props.title || "Please add a title"}</CardTitleH3>
             <span>
@@ -18,18 +18,18 @@ const FeaturedCard = props => {
               </ReadTime>
             </span>
           </CardTitle>
-        </CardTop>
-        <CardBottom>
-          <CardBottomContent>
+        </CardLeft>
+        <CardRight>
+          <CardRightContent>
             <p>{props.excerpt || "Please include an excerpt"}</p>
             <DateButton>
               <Date>{props.date || "forgot the date?"}</Date>
               <Link to="/" style={{ textDecoration: `none`, color: `#000` }}>
-                <CardBottomContentButton>Read More</CardBottomContentButton>
+                <CardRightContentButton>Read More</CardRightContentButton>
               </Link>
             </DateButton>
-          </CardBottomContent>
-        </CardBottom>
+          </CardRightContent>
+        </CardRight>
       </CardDiv>
     </FeaturedWrapper>
   );
@@ -38,7 +38,7 @@ const FeaturedCard = props => {
 export default FeaturedCard;
 
 const FeaturedWrapper = styled.div`
-  height: 30em;
+  height: 25em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,35 +58,45 @@ const CardDiv = styled.div`
   background-color: #fff;
   height: 100%;
   width: 100%;
+  position: relative;
   border-radius: 15px;
   display: flex;
   overflow: hidden;
   text-align: left;
   transition: all 0.3s ease-in-out;
+  justify-content: space-between;
 `;
 /* flex-direction: column;
-  &:hover:not(CardBottom) {
+  &:hover:not(CardRight) {
     transform: scale(1.035);
     box-shadow: 10px 15px 13px rgb(0 0 0 / 11%);
   }
   box-shadow: -9px -7px 15px rgba(0, 0, 0, 0.11);
+  align-items: center;
   
   
   */
-const CardTop = styled.div`
+const CardLeft = styled.div`
   border-radius: 10px;
-  flex: 1;
   background: url(https://images.unsplash.com/photo-1621275155732-2bff82c64fd2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
-  min-height: 8em;
-  max-height: 10em;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
+  align-self: center;
+  margin: auto;
+  width: 40%;
+  height: 80%;
 `;
+/*
+  min-height: 8em;
+  max-height: 10em;
+  flex: 1;
+  
+  */
 const CardTitle = styled.div`
   height: 100%;
   color: #ffffff;
@@ -96,18 +106,25 @@ const CardTitle = styled.div`
   background: rgba(0, 0, 0, 0.192);
   padding: 0.8em;
 `;
+/*
+  position: absolute;
+
+*/
 
 const CardTitleH3 = styled.h3`
   text-transform: uppercase;
   max-width: 100%;
 `;
 const ReadTime = styled.small``;
-const CardBottom = styled.div`
-  flex: 1;
-  padding: 0.8em;
+const CardRight = styled.div`
+  padding: 2.5em;
+  width: 50%;
 `;
+/*
+  flex: 1;
 
-const CardBottomContent = styled.div`
+*/
+const CardRightContent = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -123,7 +140,7 @@ const DateButton = styled.div`
 const Date = styled.small`
   text-transform: capitalize;
 `;
-const CardBottomContentButton = styled.button`
+const CardRightContentButton = styled.button`
   padding: 0.6em 0.5em;
   background-color: #2f4293;
   border: none;

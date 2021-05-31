@@ -51,9 +51,12 @@ const CardDiv = styled.div`
   overflow: hidden;
   text-align: left;
   transition: all 0.3s ease-in-out;
-  &:hover:not(CardBottom) {
-    transform: scale(1.035);
-    box-shadow: 10px 15px 13px rgb(0 0 0 / 11%);
+  
+  /* mouse, touch pad */
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(p):not(span):not(small):not(button) {
+      transform: scale(1.035);
+      box-shadow: 10px 15px 13px rgb(0 0 0 / 11%);
   }
 `;
 const CardTop = styled.div`
