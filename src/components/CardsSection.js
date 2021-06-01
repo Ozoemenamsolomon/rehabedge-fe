@@ -4,9 +4,9 @@ import Card from "../components/Card";
 import styled from "styled-components";
 import Section from "./Section";
 
-const CardsSection = () => {
+const CardsSection = ({ sectionTitle }) => {
   return (
-    <Section>
+    <Section title={sectionTitle}>
       <CardsDiv>
         <Card
           title="How to be a man"
@@ -22,7 +22,6 @@ const CardsSection = () => {
           date="april 16, 2020"
           imageurl=""
         ></Card>
-        <Card></Card>
         <Card
           title="How to be a man"
           readtime="4"
@@ -42,6 +41,8 @@ const CardsSection = () => {
         <Card></Card>
         <Card></Card>
         <Card></Card>
+        <Card></Card>
+        <Card></Card>
         <Card
           title="How to be a man"
           readtime="4"
@@ -49,7 +50,6 @@ const CardsSection = () => {
           date="april 16, 2020"
           imageurl=""
         ></Card>
-        <Card></Card>
       </CardsDiv>
     </Section>
   );

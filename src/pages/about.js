@@ -2,18 +2,19 @@ import React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import PageWrapper from "../components/PageWrapper";
-import CardsSection from "../components/CardsSection";
+import Section from "../components/Section";
 
-const category = () => {
+const about = () => {
   return (
     <Layout>
       <PageWrapper>
         <Seo title="Home" />
-        <div></div>
-        <CardsSection sectionTitle="I want the category title dynamic!"></CardsSection>
+        <Section title="About US">
+          <div></div>
+        </Section>
       </PageWrapper>
     </Layout>
   );
 };
 
-export default category;
+export default about;
