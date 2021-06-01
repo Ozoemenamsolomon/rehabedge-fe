@@ -56,7 +56,7 @@ const Header = ({ siteTitle }) => {
             <Link to="/category">
               <li>MAGAZINE</li>
             </Link>
-            <Link to="/category">
+            <Link to="/about">
               <li>ABOUT US</li>
             </Link>
           </NavOptions>
