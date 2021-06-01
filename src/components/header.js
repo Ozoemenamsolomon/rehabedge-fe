@@ -104,7 +104,6 @@ const HeaderWrapper = styled.div`
 `;
 
 const Logo = styled.div`
-  width: 16em;
   @media (max-width: 600px) {
     width: 9em;
   }
@@ -128,7 +127,19 @@ const NavOptionsWrapper = styled.div`
 */
 const NavOptions = styled.ul`
   display: flex;
-  gap: 1em;
+  & > a {
+    color: #fff;
+    text-decoration: none;
+    list-style: none;
+    transition: all 0.3s ease;
+    padding: 0.2em 0.2em;
+    margin-left: 0.6em;
+  }
+  & > a:hover,
+  & > a:active {
+    background-color: white;
+    color: #2f4293;
+  }
   @media (max-width: 900px) {
     display: none;
   }

@@ -25,5 +25,6 @@ const SectionTitleWrapper = styled.div`
 `;
 const SectionTitle = styled.h3`
   text-transform: uppercase;
-  font-size: x-large;
+  font-size: xx-large;
+  font-weight: bold;
 `;
