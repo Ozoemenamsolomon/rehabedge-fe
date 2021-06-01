@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-// import HamburgerMenu from "./HamburgerMenu";
+import HamburgerMenu from "./HamburgerMenu";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
@@ -29,30 +29,42 @@ const Header = ({ siteTitle }) => {
   return (
     <MyHeader data-active={scrolled}>
       <HeaderWrapper>
-        <Link
-          to="/"
-          style={
-            {
-              // color: `white`,
-              // textDecoration: `none`,
-            }
-          }
-        >
+        <Logo>
           <StaticImage
             src="../images/rehabedge-icon.png"
             width={211.65354331}
+            loading="eager"
             quality={95}
             placeholder="tracedSVG"
             formats={["AUTO", "WEBP", "AVIF"]}
             alt="RehabEdge Logo | Home"
           />
-        </Link>
+        </Logo>
+        <NavOptionsWrapper>
+          <NavOptions>
+            <Link to="/category">
+              <li>FEATURED ARTICLE</li>
+            </Link>
+            <Link to="/category">
+              <li>SPOTLIGHT</li>
+            </Link>
+            <Link to="/category">
+              <li>PEOPLE</li>
+            </Link>
+            <Link to="/category">
+              <li>MAGAZINE</li>
+            </Link>
+            <Link to="/category">
+              <li>ABOUT US</li>
+            </Link>
+          </NavOptions>
+          <HamburgerMenu></HamburgerMenu>
+        </NavOptionsWrapper>
       </HeaderWrapper>
     </MyHeader>
   );
 };
 /*
-        <HamburgerMenu ></HamburgerMenu>
 
 */
 Header.propTypes = {
@@ -88,3 +100,43 @@ const HeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+
+const Logo = styled.div`
+  width: 16em;
+  @media (max-width: 600px) {
+    width: 9em;
+  }
+`;
+const NavOptionsWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+/*
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.658);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: ;
+  justify-content: flex-end;
+
+
+*/
+const NavOptions = styled.ul`
+  display: flex;
+  gap: 1em;
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+/*
+  height: 100%;
+  background: #2f4293;
+  padding: 9em 1em 1em 1em;
+  width: 80%;
+
+
+*/

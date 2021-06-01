@@ -20,13 +20,16 @@ const Menu = styled.button`
   background: var(--bg-color);
   width: var(--menu-size);
   height: var(--menu-size);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   border: none;
   border-radius: 35%;
   overflow: hidden;
   position: relative;
+  @media (max-width: 900px) {
+    display: flex;
+  }
 `;
 
 const Line = styled.div`

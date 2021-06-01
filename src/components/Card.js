@@ -51,7 +51,11 @@ const CardDiv = styled.div`
   overflow: hidden;
   text-align: left;
   transition: all 0.3s ease-in-out;
-  
+  @supports not (gap: 1.5em) {
+    & {
+      margin: 0.6em;
+    }
+  }
   /* mouse, touch pad */
   @media (hover: hover) and (pointer: fine) {
     &:hover{
