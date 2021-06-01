@@ -4,6 +4,9 @@ module.exports = {
     description: `RehabEdge Blog`,
     author: `Ozoemenam Solomon Obinna | https://solozo.page`,
   },
+  flags: {
+    DEV_SSR: true,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
