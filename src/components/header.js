@@ -30,15 +30,17 @@ const Header = ({ siteTitle }) => {
     <MyHeader data-active={scrolled}>
       <HeaderWrapper>
         <Logo>
-          <StaticImage
-            src="../images/rehabedge-icon.png"
-            width={211.65354331}
-            loading="eager"
-            quality={95}
-            placeholder="tracedSVG"
-            formats={["AUTO", "WEBP", "AVIF"]}
-            alt="RehabEdge Logo | Home"
-          />
+          <Link to="/category">
+            <StaticImage
+              src="../images/rehabedge-icon.png"
+              width={211.65354331}
+              loading="eager"
+              quality={95}
+              placeholder="tracedSVG"
+              formats={["AUTO", "WEBP", "AVIF"]}
+              alt="RehabEdge Logo | Home"
+            />
+          </Link>
         </Logo>
         <NavOptionsWrapper>
           <NavOptions>
