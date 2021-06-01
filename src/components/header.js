@@ -30,7 +30,7 @@ const Header = ({ siteTitle }) => {
     <MyHeader data-active={scrolled}>
       <HeaderWrapper>
         <Logo>
-          <Link to="/">
+          <Link to="/category">
             <StaticImage
               src="../images/rehabedge-icon.png"
               width={211.65354331}
@@ -56,7 +56,7 @@ const Header = ({ siteTitle }) => {
             <Link to="/category">
               <li>MAGAZINE</li>
             </Link>
-            <Link to="/about">
+            <Link to="/category">
               <li>ABOUT US</li>
             </Link>
           </NavOptions>

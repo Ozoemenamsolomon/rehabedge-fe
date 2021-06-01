@@ -10,7 +10,7 @@ const category = () => {
       <PageWrapper>
         <Seo title="Home" />
         <div></div>
-        <CardsSection sectionTitle="I want the category title dynamic!"></CardsSection>
+        <CardsSection></CardsSection>
       </PageWrapper>
     </Layout>
   );

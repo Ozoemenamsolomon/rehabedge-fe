@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const Section = ({ children, title }) => {
+const Section = ({ children }) => {
   return (
     <SectionWrapper>
       <SectionTitleWrapper>
-        <SectionTitle>{title}</SectionTitle>
+        <SectionTitle>Recent</SectionTitle>
       </SectionTitleWrapper>
 
       {children}
