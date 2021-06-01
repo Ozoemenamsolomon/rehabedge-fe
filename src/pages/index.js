@@ -29,7 +29,7 @@ const IndexPage = () => (
       /> */}
       <FeaturedCardsSwiper></FeaturedCardsSwiper>
       <Ad>AD Belongs Here!</Ad>
-      <CardsSection></CardsSection>
+      <CardsSection sectionTitle="Recent"></CardsSection>
     </PageWrapper>
   </Layout>
 );

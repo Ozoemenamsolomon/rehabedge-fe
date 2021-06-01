@@ -4,9 +4,9 @@ import Card from "../components/Card";
 import styled from "styled-components";
 import Section from "./Section";
 
-const CardsSection = () => {
+const CardsSection = ({ sectionTitle }) => {
   return (
-    <Section>
+    <Section title={sectionTitle}>
       <CardsDiv>
         <Card
           title="How to be a man"
