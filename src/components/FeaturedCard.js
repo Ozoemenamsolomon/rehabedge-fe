@@ -8,7 +8,7 @@ const FeaturedCard = props => {
     <FeaturedWrapper>
       <CardDiv>
         <CardLeft>
-          <CardTitle>
+          <CardTitleSmall>
             <CardTitleH3>{props.title || "Please add a title"}</CardTitleH3>
             <span>
               <ReadTime>
@@ -17,11 +17,23 @@ const FeaturedCard = props => {
                   : "Please include the readtime"}
               </ReadTime>
             </span>
-          </CardTitle>
+          </CardTitleSmall>
         </CardLeft>
         <CardRight>
           <CardRightContent>
-            <p>{props.excerpt || "Please include an excerpt"}</p>
+            <CardTitleBig>
+              <CardTitleH3Big>
+                {props.title || "Please add a title"}
+              </CardTitleH3Big>
+              <span>
+                <ReadTime>
+                  {props.readtime
+                    ? `${props.readtime} mins read`
+                    : "Please include the readtime"}
+                </ReadTime>
+              </span>
+            </CardTitleBig>
+            <Excerpt>{props.excerpt || "Please include an excerpt"}</Excerpt>
             <DateButton>
               <Date>{props.date || "forgot the date?"}</Date>
               <Link to="/" style={{ textDecoration: `none`, color: `#000` }}>
@@ -100,7 +112,7 @@ const CardLeft = styled.div`
   flex: 1;
   
   */
-const CardTitle = styled.div`
+const CardTitleSmall = styled.div`
   height: 100%;
   color: #ffffff;
   display: flex;
@@ -108,6 +120,14 @@ const CardTitle = styled.div`
   flex-direction: column;
   background: rgba(0, 0, 0, 0.192);
   padding: 0.8em;
+  @media (min-width: 600px) {
+    @supports not (content-visibility: hidden) {
+      content-visibility: hidden;
+    }
+    @supports not (content-visibility: hidden) {
+      display: hidden;
+    }
+  }
 `;
 /*
   position: absolute;
@@ -131,10 +151,18 @@ const CardRightContent = styled.div`
   display: flex;
   height: 100%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0.5em 0em;
 `;
-
+const CardTitleBig = styled.div``;
+const CardTitleH3Big = styled.h3`
+  text-transform: uppercase;
+  max-width: 100%;
+  font-size: x-large;
+`;
+const Excerpt = styled.p`
+  font-size: large;
+`;
 const DateButton = styled.div`
   display: flex;
   align-items: center;

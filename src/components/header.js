@@ -105,7 +105,7 @@ const HeaderWrapper = styled.div`
 
 const Logo = styled.div`
   @media (max-width: 600px) {
-    width: 9em;
+    max-width: 9em;
   }
 `;
 const NavOptionsWrapper = styled.div`
