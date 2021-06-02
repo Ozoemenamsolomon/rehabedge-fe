@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Solomon Ozoemenam <ozoemenamsolomon@yahoo.com>",
   "dependencies": {
+    "@fontsource/montserrat": "^4.4.2",
+    "@fontsource/open-sans": "^4.4.2",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.4.1",
     "gatsby-plugin-gatsby-cloud": "^2.4.1",
