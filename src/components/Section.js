@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const Section = ({ children, title }) => {
+const Section = props => {
   return (
     <SectionWrapper>
       <SectionTitleWrapper>
-        <SectionTitle>{title}</SectionTitle>
+        <SectionTitle>{props.title}</SectionTitle>
       </SectionTitleWrapper>
-
-      {children}
+      <div>{props.children}</div>
     </SectionWrapper>
   );
 };
