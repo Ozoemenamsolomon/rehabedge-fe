@@ -44,21 +44,21 @@ const Header = ({ siteTitle }) => {
         </Logo>
         <NavOptionsWrapper>
           <NavOptions>
-            <Link to="/category">
-              <li>FEATURED ARTICLE</li>
-            </Link>
-            <Link to="/category">
-              <li>SPOTLIGHT</li>
-            </Link>
-            <Link to="/category">
-              <li>PEOPLE</li>
-            </Link>
-            <Link to="/category">
-              <li>MAGAZINE</li>
-            </Link>
-            <Link to="/about">
-              <li>ABOUT US</li>
-            </Link>
+            <li>
+              <Link to="/category">FEATURED ARTICLE</Link>
+            </li>
+            <li>
+              <Link to="/category">SPOTLIGHT</Link>
+            </li>
+            <li>
+              <Link to="/category">PEOPLE</Link>
+            </li>
+            <li>
+              <Link to="/category">MAGAZINE</Link>
+            </li>
+            <li>
+              <Link to="/about">ABOUT US</Link>
+            </li>
           </NavOptions>
           <HamburgerMenu></HamburgerMenu>
         </NavOptionsWrapper>
@@ -127,16 +127,18 @@ const NavOptionsWrapper = styled.div`
 */
 const NavOptions = styled.ul`
   display: flex;
-  & > a {
+  & li {
+    list-style: none;
+  }
+  & a {
     color: #fff;
     text-decoration: none;
-    list-style: none;
     transition: all 0.3s ease;
     padding: 0.2em 0.2em;
     margin-left: 0.6em;
   }
-  & > a:hover,
-  & > a:active {
+  & a:hover,
+  & a:active {
     background-color: white;
     color: #2f4293;
   }
