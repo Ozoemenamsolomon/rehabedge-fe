@@ -36,8 +36,11 @@ const Card = props => {
 export default Card;
 
 Card.propTypes = {
+  title: PropTypes.string,
   excerpt: PropTypes.string,
   readtime: PropTypes.number,
+  date: PropTypes.string,
+  imageurl: PropTypes.string,
 };
 
 const CardDiv = styled.div`

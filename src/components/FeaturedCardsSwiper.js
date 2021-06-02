@@ -37,7 +37,7 @@ const FeaturedCardsSwiper = () => {
       <SwiperSlide>
         <FeaturedCard
           title="How to be a man"
-          readtime="hjadg"
+          readtime={13}
           excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
           date="april 16, 2020"
           imageurl=""
@@ -49,7 +49,7 @@ const FeaturedCardsSwiper = () => {
       <SwiperSlide>
         <FeaturedCard
           title="How to be a man"
-          readtime="hjadg"
+          readtime={45}
           excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
           date="april 16, 2020"
           imageurl=""
@@ -61,7 +61,7 @@ const FeaturedCardsSwiper = () => {
       <SwiperSlide>
         <FeaturedCard
           title="How to be a man"
-          readtime="hjadg"
+          readtime={20}
           excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
           date="april 16, 2020"
           imageurl=""

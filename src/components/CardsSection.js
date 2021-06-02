@@ -10,14 +10,14 @@ const CardsSection = ({ sectionTitle }) => {
       <CardsDiv>
         <Card
           title="How to be a man"
-          readtime="12"
+          readtime={12}
           excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
           date="april 16, 2020"
           imageurl=""
         ></Card>
         <Card
           title="How to be a woman"
-          readtime="3"
+          readtime={3}
           excerpt="jhdfgh15"
           date="april 16, 2020"
           imageurl=""
@@ -25,7 +25,7 @@ const CardsSection = ({ sectionTitle }) => {
         <Card></Card>
         <Card
           title="How to be a man"
-          readtime="4"
+          readtime={4}
           excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
           date="april 16, 2020"
           imageurl=""
@@ -34,7 +34,7 @@ const CardsSection = ({ sectionTitle }) => {
         <Card></Card>
         <Card
           title="How to be a man"
-          readtime="4"
+          readtime={4}
           excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
           date="april 16, 2020"
           imageurl=""
@@ -44,7 +44,7 @@ const CardsSection = ({ sectionTitle }) => {
         <Card></Card>
         <Card
           title="How to be a man"
-          readtime="14"
+          readtime={14}
           excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
           date="april 16, 2020"
           imageurl=""
