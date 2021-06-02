@@ -119,6 +119,7 @@ const CardBottomContentButton = styled.button`
   padding: 0.6em 0.5em;
   background-color: #2f4293;
   border: none;
+  cursor: inherit;
   color: #fff;
   border-radius: 0.3em;
 `;

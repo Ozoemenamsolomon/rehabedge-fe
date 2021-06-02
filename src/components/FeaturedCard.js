@@ -76,10 +76,16 @@ const CardDiv = styled.div`
   position: relative;
   border-radius: 15px;
   display: flex;
+  flex-direction: row;
   overflow: hidden;
   text-align: left;
   transition: all 0.3s ease-in-out;
   justify-content: space-between;
+  @media (max-width: 600px) {
+    & {
+      flex-direction: column;
+    }
+  }
 `;
 /* flex-direction: column;
   &:hover:not(CardRight) {
@@ -121,9 +127,7 @@ const CardTitleSmall = styled.div`
   background: rgba(0, 0, 0, 0.192);
   padding: 0.8em;
   @media (min-width: 600px) {
-    @supports not (content-visibility: hidden) {
-      content-visibility: hidden;
-    }
+    content-visibility: hidden;
     @supports not (content-visibility: hidden) {
       display: hidden;
     }
@@ -142,6 +146,12 @@ const ReadTime = styled.small``;
 const CardRight = styled.div`
   padding: 2.5em;
   width: 50%;
+  @media (max-width: 600px) {
+    & {
+      width: unset;
+      padding: 1.5em;
+    }
+  }
 `;
 /*
   flex: 1;
@@ -159,9 +169,19 @@ const CardTitleH3Big = styled.h3`
   text-transform: uppercase;
   max-width: 100%;
   font-size: x-large;
+  @media (max-width: 600px) {
+    & {
+      font-size: unset;
+    }
+  }
 `;
 const Excerpt = styled.p`
   font-size: large;
+  @media (max-width: 600px) {
+    & {
+      font-size: unset;
+    }
+  }
 `;
 const DateButton = styled.div`
   display: flex;
@@ -175,6 +195,7 @@ const CardRightContentButton = styled.button`
   padding: 0.6em 0.5em;
   background-color: #2f4293;
   border: none;
+  cursor: inherit;
   color: #fff;
   border-radius: 0.3em;
 `;
