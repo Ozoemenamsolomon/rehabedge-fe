@@ -9,13 +9,15 @@ import PageWrapper from "../components/PageWrapper";
 import CardsSection from "../components/CardsSection";
 import FeaturedCardsSwiper from "../components/FeaturedCardsSwiper";
 import Ad from "../components/Ad";
+import NewsLetter from "../components/NewsLetter";
 // import styled from "styled-components";
 
-const IndexPage = () => (
-  <Layout>
-    <PageWrapper>
-      <Seo title="Home" />
-      {/*
+const IndexPage = () => {
+  return (
+    <Layout>
+      <PageWrapper>
+        <Seo title="Home" />
+        {/*
        <StaticImage
         src="../images/gatsby-astronaut.png"
         width={300}
@@ -27,11 +29,13 @@ const IndexPage = () => (
         <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
       </p>
       /> */}
-      <FeaturedCardsSwiper></FeaturedCardsSwiper>
-      <Ad>AD Belongs Here!</Ad>
-      <CardsSection sectionTitle="Recent"></CardsSection>
-    </PageWrapper>
-  </Layout>
-);
+        <FeaturedCardsSwiper></FeaturedCardsSwiper>
+        <Ad>AD Belongs Here!</Ad>
+        <CardsSection sectionTitle="Recent"></CardsSection>
+        <NewsLetter></NewsLetter>
+      </PageWrapper>
+    </Layout>
+  );
+};
 
 export default IndexPage;

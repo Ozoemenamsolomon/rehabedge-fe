@@ -111,6 +111,14 @@ const CardLeft = styled.div`
   margin: auto;
   width: 40%;
   height: 80%;
+  @media (max-width: 600px) {
+    & {
+      width: 100%;
+      margin: unset;
+      min-height: 30%;
+      max-height: 40%;
+    }
+  }
 `;
 /*
   min-height: 8em;
@@ -149,7 +157,7 @@ const CardRight = styled.div`
   @media (max-width: 600px) {
     & {
       width: unset;
-      padding: 1.5em;
+      padding: 1em;
     }
   }
 `;
