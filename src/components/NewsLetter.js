@@ -6,8 +6,8 @@ const NewsLetter = () => {
     <NewsLetterDiv>
       <NewsLetterTitle>Subsribe to our newsletter</NewsLetterTitle>
       <NewsLetterWrapper
-        /**/ action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdSHa-ljM22hItoia69R7UweavCdzYftqhnZr-AhlE1EJrnAg/formResponse"
-        method="POST"
+      /*action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdSHa-ljM22hItoia69R7UweavCdzYftqhnZr-AhlE1EJrnAg/formResponse"
+        method="POST"*/
       >
         <Name>
           <NameLabel htmlFor="name">Name:</NameLabel>
@@ -16,14 +16,14 @@ const NewsLetter = () => {
             type="text"
             name="name"
             id="name"
-            /*Be careful!!🤣------------------------------ */ className="quantumWizTextinputPaperinputInput exportInput"
+            /*Be careful!!🤣------------------------------ className="quantumWizTextinputPaperinputInput exportInput"
             jsname="YPqjbf"
             tabindex="0"
             aria-labelledby="i1"
             aria-describedby="i2 i3"
             dir="auto"
             data-initial-dir="auto"
-            data-initial-value=""
+            data-initial-value=""*/
           />
         </Name>
         <Email>
@@ -34,7 +34,7 @@ const NewsLetter = () => {
             name="email"
             id="email"
             required
-            /*Be careful!!🤣------------------------------*/
+            /*Be careful!!🤣------------------------------
             className="quantumWizTextinputPaperinputInput exportInput"
             jsname="YPqjbf"
             tabindex="0"
@@ -42,12 +42,12 @@ const NewsLetter = () => {
             aria-describedby="i6 i7"
             dir="auto"
             data-initial-dir="auto"
-            data-initial-value=""
+            data-initial-value=""*/
           />
         </Email>
         <Button
           type="submit"
-          /*Be careful!!🤣------------------------------*/
+          /*Be careful!!🤣------------------------------
 
           role="button"
           className="appsMaterialWizButtonEl appsMaterialWizButtonPaperbuttonEl appsMaterialWizButtonPaperbuttonFilled freebirdFormviewerViewNavigationSubmitButton freebirdThemedFilledButtonM2"
@@ -55,7 +55,7 @@ const NewsLetter = () => {
           jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue;touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc(preventMouseEvents=true|preventDefault=true); touchcancel:JMtRjd;focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;"
           jsshadow=""
           jsname="M2UYVd"
-          tabindex="0"
+          tabindex="0"*/
         >
           Submit
         </Button>
