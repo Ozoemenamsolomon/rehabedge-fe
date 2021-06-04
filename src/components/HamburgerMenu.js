@@ -5,7 +5,7 @@ const HamburgerMenu = ({ size, colour }) => {
   return (
     <>
       <MenuInput type="checkbox" name="meu" id="menu" />
-      <Menu htmlFor="menu">
+      <Menu tabIndex="0" htmlFor="menu">
         <Line></Line>
         <ButtonName>Menu button</ButtonName>
       </Menu>

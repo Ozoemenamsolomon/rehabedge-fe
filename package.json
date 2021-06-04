@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Solomon Ozoemenam <ozoemenamsolomon@yahoo.com>",
   "dependencies": {
+    "@fontsource/material-icons": "^4.4.2",
     "@fontsource/montserrat": "^4.4.2",
     "@fontsource/open-sans": "^4.4.2",
     "babel-plugin-styled-components": "^1.12.0",

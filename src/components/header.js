@@ -46,19 +46,19 @@ const Header = ({ siteTitle }) => {
           <HamburgerMenu></HamburgerMenu>
           <NavOptions>
             <li>
-              <Link to="/category">FEATURED ARTICLE</Link>
+              <NavLink to="/category">FEATURED ARTICLE</NavLink>
             </li>
             <li>
-              <Link to="/category">SPOTLIGHT</Link>
+              <NavLink to="/category">SPOTLIGHT</NavLink>
             </li>
             <li>
-              <Link to="/category">PEOPLE</Link>
+              <NavLink to="/category">PEOPLE</NavLink>
             </li>
             <li>
-              <Link to="/category">MAGAZINE</Link>
+              <NavLink to="/category">MAGAZINE</NavLink>
             </li>
             <li>
-              <Link to="/about">ABOUT US</Link>
+              <NavLink to="/about">ABOUT US</NavLink>
             </li>
           </NavOptions>
         </NavOptionsWrapper>
@@ -114,7 +114,7 @@ const Logo = styled.div`
     max-width: 9em;
   }
 `;
-const NavOptionsWrapper = styled.div`
+const NavOptionsWrapper = styled.nav`
   display: flex;
   align-items: center;
 `;
@@ -136,18 +136,6 @@ const NavOptions = styled.ul`
   & li {
     list-style: none;
   }
-  & a {
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 0.2em 0.2em;
-    margin-left: 0.6em;
-  }
-  & a:hover,
-  & a:active {
-    background-color: white;
-    color: #2f4293;
-  }
   @media (max-width: 900px) {
     height: 100vh;
     top: 0;
@@ -160,6 +148,24 @@ const NavOptions = styled.ul`
     justify-content: center;
     width: 80%;
     transition: all 0.5s ease-in;
+  }
+`;
+const NavLink = styled(Link)`
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: block;
+  padding: 1em 0.5em;
+  &:hover,
+  &:active {
+    background-color: white;
+    color: #2f4293;
+  }
+  @media (min-width: 900px) {
+    & {
+      margin-left: 0.2em;
+      border-radius: 2em;
+    }
   }
 `;
 
