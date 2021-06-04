@@ -1,5 +1,5 @@
 import * as React from "react";
-// import { Link } from "gatsby";
+import { graphql } from "gatsby";
 // import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
@@ -13,68 +13,47 @@ import Ad from "../components/Ad";
 import NewsLetter from "../components/NewsLetter";
 // import styled from "styled-components";
 
-const IndexPage = () => {
+export const query = graphql`
+  {
+    allStrapiArticle {
+      edges {
+        node {
+          id
+          Titel
+          Date(locale: "en-gb", formatString: "LL")
+          Slug
+          Read_duration
+          Excerpt
+          Images {
+            url
+          }
+        }
+      }
+    }
+  }
+`;
+
+const IndexPage = ({ data }) => {
   return (
     <Layout>
       <PageWrapper>
         <Seo title="Home" />
-        {/*
-       <StaticImage
-        src="../images/gatsby-astronaut.png"
-        width={300}
-        quality={95}
-        formats={["AUTO", "WEBP", "AVIF"]}
-        alt="A Gatsby astronaut"
-        style={{ marginBottom: `1.45rem` }}<p>
-        <Link to="/page-2/">Go to page 2</Link> <br />
-        <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-      </p>
-      /> */}
+
         <FeaturedCardsSwiper></FeaturedCardsSwiper>
         <Ad>AD Belongs Here!</Ad>
         <CardsSection sectionTitle="Recent">
-          <Card
-            title="How to be a man"
-            readtime={12}
-            excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
-            date="april 16, 2020"
-            imageurl=""
-          ></Card>
-          <Card
-            title="How to be a woman"
-            readtime={3}
-            excerpt="jhdfgh15"
-            date="april 16, 2020"
-            imageurl=""
-          ></Card>
-          <Card></Card>
-          <Card
-            title="How to be a man"
-            readtime={4}
-            excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
-            date="april 16, 2020"
-            imageurl=""
-          ></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card
-            title="How to be a man"
-            readtime={4}
-            excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
-            date="april 16, 2020"
-            imageurl=""
-          ></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card></Card>
-          <Card
-            title="How to be a man"
-            readtime={14}
-            excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
-            date="april 16, 2020"
-            imageurl=""
-          ></Card>
-          <Card></Card>
+          {data.allStrapiArticle.edges.map(edge => {
+            return (
+              <Card
+                title={edge.node.Titel}
+                readtime={edge.node.Read_duration}
+                excerpt={edge.node.Excerpt}
+                date={edge.node.Date}
+                imageurl={edge.node.Images.url}
+                slug={edge.node.Slug}
+              ></Card>
+            );
+          })}
         </CardsSection>
         <NewsLetter></NewsLetter>
       </PageWrapper>

@@ -76,7 +76,7 @@ const NewsLetterDiv = styled.div`
 `;
 const NewsLetterTitle = styled.h4`
   color: #fff;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   text-transform: uppercase;
 `;
 const NewsLetterWrapper = styled.form`
@@ -117,6 +117,7 @@ const NameLabel = styled.label`
 `;
 const NameInput = styled.input`
   border-radius: 0.5em;
+  border: none;
   height: 100%;
   flex: 1;
   padding: 0 0.5em;

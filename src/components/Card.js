@@ -122,6 +122,7 @@ const DateButton = styled.div`
 `;
 const Date = styled.small`
   text-transform: capitalize;
+  color: #b7b7b7;
 `;
 const CardBottomContentButton = styled.button`
   padding: 0.6em 0.5em;
