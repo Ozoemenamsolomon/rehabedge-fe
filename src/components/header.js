@@ -43,6 +43,7 @@ const Header = ({ siteTitle }) => {
           </Link>
         </Logo>
         <NavOptionsWrapper>
+          <HamburgerMenu></HamburgerMenu>
           <NavOptions>
             <li>
               <Link to="/category">FEATURED ARTICLE</Link>
@@ -60,7 +61,6 @@ const Header = ({ siteTitle }) => {
               <Link to="/about">ABOUT US</Link>
             </li>
           </NavOptions>
-          <HamburgerMenu></HamburgerMenu>
         </NavOptionsWrapper>
       </HeaderWrapper>
     </MyHeader>
@@ -91,9 +91,15 @@ const MyHeader = styled.header`
     -webkit-box-shadow: 0px 5px 7px 0px rgb(0 0 0 / 40%);
     box-shadow: 0px 5px 7px 0px rgb(0 0 0 / 40%);
   }
+  & #menu:checked ~ ul {
+    right: 0;
+  }
 `;
 // style={{ }}   box-shadow: 0 2px 8px rgba(152,168,188,.2);
 
+// & [type="checkbox"] {
+//   right: 0;
+// }
 const HeaderWrapper = styled.div`
   margin: 0 auto;
   max-width: 90%;
@@ -143,7 +149,17 @@ const NavOptions = styled.ul`
     color: #2f4293;
   }
   @media (max-width: 900px) {
-    display: none;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #2f4293;
+    z-index: -1;
+    position: fixed;
+    justify-content: center;
+    width: 80%;
+    transition: all 0.5s ease-in;
   }
 `;
 

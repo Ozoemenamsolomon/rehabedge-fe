@@ -3,15 +3,34 @@ import styled from "styled-components";
 
 const HamburgerMenu = ({ size, colour }) => {
   return (
-    <Menu>
-      <Line></Line>
-      <ButtonName>Menu button</ButtonName>
-    </Menu>
+    <>
+      <MenuInput type="checkbox" name="meu" id="menu" />
+      <Menu htmlFor="menu">
+        <Line></Line>
+        <ButtonName>Menu button</ButtonName>
+      </Menu>
+    </>
   );
 };
 
 export default HamburgerMenu;
-const Menu = styled.button`
+const MenuInput = styled.input`
+  display: none;
+  &:checked + label > div {
+    background-color: transparent;
+    transform: translatey(500%);
+  }
+  &:checked + label > div::before {
+    transform: translatey(-500%) rotate(315deg);
+    top: 0%;
+  }
+  &:checked + label > div::after {
+    bottom: 0%;
+    transform: translatey(-500%) rotate(-315deg);
+  }
+`;
+
+const Menu = styled.label`
   --menu-size: 3em;
   --displacement: -180%;
   --animation-duration: 0.5s;
@@ -60,8 +79,10 @@ const Line = styled.div`
     border-radius: calc(var(--menu-size) / 20);
     transition: all var(--animation-duration) ease-in;
   }
+`;
 
-  ${Menu}:focus & {
+/*
+${Menu}:focus & {
     background-color: transparent;
     transform: translatey(500%);
   }
@@ -73,7 +94,9 @@ const Line = styled.div`
     bottom: 0%;
     transform: translatey(-500%) rotate(-315deg);
   }
-`;
+
+*/
+
 const ButtonName = styled.span`
   position: absolute;
   z-index: -2;

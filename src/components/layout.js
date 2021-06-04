@@ -43,7 +43,13 @@ const Layout = ({ children }) => {
           <p>
             Built with
             {` `}
-            <FooterLink href="https://www.gatsbyjs.com">Gatsby</FooterLink>
+            <FooterLink
+              target="blank"
+              rel=" noopener"
+              href="https://www.gatsbyjs.com"
+            >
+              Gatsby
+            </FooterLink>
           </p>
         </FooterWrapper>
       </MyFooter>

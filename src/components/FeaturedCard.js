@@ -36,7 +36,15 @@ const FeaturedCard = props => {
             <Excerpt>{props.excerpt || "Please include an excerpt"}</Excerpt>
             <DateButton>
               <Date>{props.date || "forgot the date?"}</Date>
-              <Link to="/" style={{ textDecoration: `none`, color: `#000` }}>
+              <Link
+                title={
+                  props.title
+                    ? `Read more on - ${props.title}`
+                    : `Read more on this topic`
+                }
+                to="/"
+                style={{ textDecoration: `none`, color: `#000` }}
+              >
                 <CardRightContentButton>Read More</CardRightContentButton>
               </Link>
             </DateButton>

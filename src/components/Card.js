@@ -23,7 +23,15 @@ const Card = props => {
           <p>{props.excerpt || "Please include an excerpt"}</p>
           <DateButton>
             <Date>{props.date || "forgot the date?"}</Date>
-            <Link to="/" style={{ textDecoration: `none`, color: `#000` }}>
+            <Link
+              title={
+                props.title
+                  ? `Read more on - ${props.title}`
+                  : `Read more on this topic`
+              }
+              to="/"
+              style={{ textDecoration: `none`, color: `#000` }}
+            >
               <CardBottomContentButton>Read More</CardBottomContentButton>
             </Link>
           </DateButton>
