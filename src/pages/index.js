@@ -15,7 +15,7 @@ import NewsLetter from "../components/NewsLetter";
 
 export const query = graphql`
   {
-    allStrapiArticle {
+    allStrapiArticle(sort: { fields: Date, order: DESC }) {
       edges {
         node {
           id
@@ -25,7 +25,11 @@ export const query = graphql`
           Read_duration
           Excerpt
           Images {
-            url
+            formats {
+              thumbnail {
+                url
+              }
+            }
           }
         }
       }
@@ -45,11 +49,12 @@ const IndexPage = ({ data }) => {
           {data.allStrapiArticle.edges.map(edge => {
             return (
               <Card
+                key={edge.node.id}
                 title={edge.node.Titel}
                 readtime={edge.node.Read_duration}
                 excerpt={edge.node.Excerpt}
                 date={edge.node.Date}
-                imageurl={edge.node.Images.url}
+                imageurl={edge.node.Images.formats.thumbnail.url}
                 slug={edge.node.Slug}
               ></Card>
             );

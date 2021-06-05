@@ -41,14 +41,14 @@ const Layout = ({ children }) => {
         <FooterWrapper>
           <p>© {new Date().getFullYear()}, RehabEdge. All Rights Reserved.</p>
           <p>
-            Built with
+            Design and Developed by
             {` `}
             <FooterLink
               target="blank"
               rel=" noopener"
-              href="https://www.gatsbyjs.com"
+              href="https://www.solozo.page"
             >
-              Gatsby
+              Solozo
             </FooterLink>
           </p>
         </FooterWrapper>

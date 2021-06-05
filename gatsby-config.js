@@ -40,6 +40,7 @@ module.exports = {
       options: {
         apiURL: "https://rehabedge-be.herokuapp.com",
         collectionTypes: ["article", "category"],
+        singleTypes: ["about-us"],
         queryLimit: 1000,
       },
     },
@@ -60,8 +61,5 @@ module.exports = {
         precachePages: [`/about/`, `/`],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 };

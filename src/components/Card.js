@@ -6,8 +6,8 @@ import { Link } from "gatsby";
 const Card = props => {
   return (
     <CardDiv>
-      <CardTop>
-        <CardTitle>
+      <CardTop imageurl={props.imageurl}>
+        <CardTitle title={props.title ? `${props.title}` : ``}>
           <CardTitleH3>{props.title || "Please add a title"}</CardTitleH3>
           <span>
             <ReadTime>
@@ -77,7 +77,7 @@ const CardDiv = styled.div`
 const CardTop = styled.div`
   border-radius: 10px;
   flex: 1;
-  background: url(https://images.unsplash.com/photo-1621275155732-2bff82c64fd2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80);
+  background: url(${props => props.imageurl});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
