@@ -75,6 +75,17 @@ const FooterWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 900px) {
+    & {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  @media (max-width: 600px) {
+    & {
+      font-size: smaller;
+    }
+  }
 `;
 const FooterLink = styled.a`
   color: #fff;

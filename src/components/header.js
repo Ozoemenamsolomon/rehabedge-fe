@@ -146,7 +146,8 @@ const NavOptions = styled.ul`
     z-index: -1;
     position: fixed;
     justify-content: center;
-    width: 80%;
+    width: 100%;
+    text-align: center;
     transition: all 0.5s ease-in;
   }
 `;

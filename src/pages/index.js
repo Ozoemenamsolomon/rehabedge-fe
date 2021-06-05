@@ -25,6 +25,7 @@ export const query = graphql`
           Read_duration
           Excerpt
           Images {
+            alternativeText
             formats {
               thumbnail {
                 url
@@ -55,6 +56,7 @@ const IndexPage = ({ data }) => {
                 excerpt={edge.node.Excerpt}
                 date={edge.node.Date}
                 imageurl={edge.node.Images.formats.thumbnail.url}
+                imagealt={edge.node.Images.alternativeText}
                 slug={edge.node.Slug}
               ></Card>
             );

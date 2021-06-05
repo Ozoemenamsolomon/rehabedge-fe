@@ -7,7 +7,7 @@ const Card = props => {
   return (
     <CardDiv>
       <CardTop imageurl={props.imageurl}>
-        <CardTitle title={props.title ? `${props.title}` : ``}>
+        <CardTitle title={props.imagealt ? `${props.imagealt}` : ``}>
           <CardTitleH3>{props.title || "Please add a title"}</CardTitleH3>
           <span>
             <ReadTime>
@@ -49,6 +49,8 @@ Card.propTypes = {
   readtime: PropTypes.number,
   date: PropTypes.string,
   imageurl: PropTypes.string,
+  slug: PropTypes.string,
+  imagealt: PropTypes.string,
 };
 
 const CardDiv = styled.div`
