@@ -58,6 +58,7 @@ const IndexPage = ({ data }) => {
                 imageurl={edge.node.Images.formats.thumbnail.url}
                 imagealt={edge.node.Images.alternativeText}
                 slug={edge.node.Slug}
+                path={`/posts/${edge.node.Slug}`}
               ></Card>
             );
           })}

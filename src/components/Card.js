@@ -29,7 +29,7 @@ const Card = props => {
                   ? `Read more on - ${props.title}`
                   : `Read more on this topic`
               }
-              to="/"
+              to={props.path}
               style={{ textDecoration: `none`, color: `#000` }}
             >
               <CardBottomContentButton>Read More</CardBottomContentButton>

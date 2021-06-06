@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allStrapiArticle.edges.forEach(({ node }) => {
     createPage({
-      path: `post/${node.Slug}`,
+      path: `posts/${node.Slug}`,
       component: path.resolve(`./src/templates/single-post.js`),
       context: {
         slug: node.Slug,
