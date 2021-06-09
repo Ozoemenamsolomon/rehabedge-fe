@@ -4,13 +4,42 @@ import Seo from "../components/seo";
 import PageWrapper from "../components/PageWrapper";
 import CardsSection from "../components/CardsSection";
 import Card from "../components/Card";
+import { graphql } from "gatsby";
 
-const category = () => {
+export const query = graphql`
+  query MyQuery($slug: String) {
+    allStrapiCategory(filter: { Slug: { eq: $slug } }) {
+      nodes {
+        Slug
+        name
+        id
+        article {
+          id
+          Titel
+          Date(locale: "en-gb", formatString: "LL")
+          Slug
+          Read_duration
+          Excerpt
+          Images {
+            alternativeText
+            formats {
+              thumbnail {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const category = ({ data }) => {
   return (
     <Layout>
       <PageWrapper>
         <Seo title="Home" />
-        <CardsSection sectionTitle="I want the category title dynamic!">
+        <CardsSection sectionTitle={data.allStrapiCategory.nodes[0].name}>
           <Card
             title="How to be a man"
             readtime={12}

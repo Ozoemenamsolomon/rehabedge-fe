@@ -46,16 +46,18 @@ const Header = ({ siteTitle }) => {
           <HamburgerMenu></HamburgerMenu>
           <NavOptions>
             <li>
-              <NavLink to="/categories">FEATURED ARTICLE</NavLink>
+              <NavLink to="/categories/featured-articles">
+                FEATURED ARTICLE
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/categories">SPOTLIGHT</NavLink>
+              <NavLink to="/categories/spotlight">SPOTLIGHT</NavLink>
             </li>
             <li>
-              <NavLink to="/categories">PEOPLE</NavLink>
+              <NavLink to="/categories/people">PEOPLE</NavLink>
             </li>
             <li>
-              <NavLink to="/categories">MAGAZINE</NavLink>
+              <NavLink to="/categories/magazine">MAGAZINE</NavLink>
             </li>
             <li>
               <NavLink to="/about">ABOUT US</NavLink>

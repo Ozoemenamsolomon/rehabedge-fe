@@ -12,11 +12,30 @@ const path = require(`path`);
 //   console.log(`Node created of type "${node.internal.type}"`);
 // };
 
+// query {
+//     allStrapiArticle {
+//       edges {
+//         node {
+//           id
+//           Slug
+//         }
+//       }
+//     }
+//   }
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const result = await graphql(`
-    query {
+    {
       allStrapiArticle {
+        edges {
+          node {
+            id
+            Slug
+          }
+        }
+      }
+      allStrapiCategory {
         edges {
           node {
             id
@@ -32,6 +51,15 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `posts/${node.Slug}`,
       component: path.resolve(`./src/templates/single-post.js`),
+      context: {
+        slug: node.Slug,
+      },
+    });
+  });
+  result.data.allStrapiCategory.edges.forEach(({ node }) => {
+    createPage({
+      path: `categories/${node.Slug}`,
+      component: path.resolve(`./src/templates/category.js`),
       context: {
         slug: node.Slug,
       },
