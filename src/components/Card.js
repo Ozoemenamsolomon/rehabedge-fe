@@ -71,9 +71,10 @@ const CardDiv = styled.div`
   }
   /* mouse, touch pad */
   @media (hover: hover) and (pointer: fine) {
-    &:hover{
+    &:hover {
       transform: scale(1.035);
       box-shadow: 10px 15px 13px rgb(0 0 0 / 11%);
+    }
   }
 `;
 const CardTop = styled.div`

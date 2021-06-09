@@ -14,27 +14,44 @@ import NewsLetter from "../components/NewsLetter";
 // import styled from "styled-components";
 
 export const query = graphql`
-  {
+  query one {
     allStrapiArticle(sort: { fields: Date, order: DESC }) {
       edges {
         node {
-          id
-          Titel
-          Categories {
-            name
-          }
-          Date(locale: "en-gb", formatString: "LL")
-          Slug
-          Read_duration
-          Excerpt
-          Images {
-            alternativeText
-            formats {
-              thumbnail {
-                url
-              }
-            }
-          }
+          ...test
+        }
+      }
+    }
+    featuredArticle: allStrapiArticle(
+      sort: { fields: Date, order: DESC }
+      filter: {
+        Categories: { elemMatch: { name: { eq: "Featured Articles" } } }
+      }
+      limit: 5
+    ) {
+      edges {
+        node {
+          ...test
+        }
+      }
+    }
+  }
+
+  fragment test on StrapiArticle {
+    id
+    Titel
+    Categories {
+      name
+    }
+    Date(locale: "en-gb", formatString: "LL")
+    Slug
+    Read_duration
+    Excerpt
+    Images {
+      alternativeText
+      formats {
+        thumbnail {
+          url
         }
       }
     }
@@ -46,7 +63,9 @@ const IndexPage = ({ data }) => {
     <Layout>
       <PageWrapper>
         <Seo title="Home" />
-        <FeaturedCardsSwiper articleQuery={data}></FeaturedCardsSwiper>
+        <FeaturedCardsSwiper
+          articleQuery={data.featuredArticle}
+        ></FeaturedCardsSwiper>
         <Ad>AD Belongs Here!</Ad>
         <CardsSection sectionTitle="Recent">
           {
