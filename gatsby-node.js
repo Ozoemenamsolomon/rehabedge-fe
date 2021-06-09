@@ -49,7 +49,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allStrapiArticle.edges.forEach(({ node }) => {
     createPage({
-      path: `posts/${node.Slug}`,
+      path: `/posts/${node.Slug}`,
       component: path.resolve(`./src/templates/single-post.js`),
       context: {
         slug: node.Slug,
@@ -58,7 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
   result.data.allStrapiCategory.edges.forEach(({ node }) => {
     createPage({
-      path: `categories/${node.Slug}`,
+      path: `/categories/${node.Slug}`,
       component: path.resolve(`./src/templates/category.js`),
       context: {
         slug: node.Slug,

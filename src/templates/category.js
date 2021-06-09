@@ -35,35 +35,29 @@ export const query = graphql`
 `;
 
 const category = ({ data }) => {
+  const categoryCards = data.allStrapiCategory.nodes[0].article;
   return (
     <Layout>
       <PageWrapper>
         <Seo title="Home" />
         <CardsSection sectionTitle={data.allStrapiCategory.nodes[0].name}>
-          <Card
-            title="How to be a man"
-            readtime={12}
-            excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
-            date="april 16, 2020"
-            imageurl=""
-          ></Card>
-          <Card
-            title="How to be a woman"
-            readtime={3}
-            excerpt="jhdfgh15"
-            date="april 16, 2020"
-            imageurl=""
-          ></Card>
-          <Card></Card>
-          <Card
-            title="How to be a man"
-            readtime={4}
-            excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
-            date="april 16, 2020"
-            imageurl=""
-          ></Card>
-          <Card></Card>
-          <Card></Card>
+          {
+            categoryCards.map(categoryCard => {
+              return (
+                <Card
+                  key={categoryCard.id}
+                  title={categoryCard.Titel}
+                  readtime={categoryCard.Read_duration}
+                  excerpt={categoryCard.Excerpt}
+                  date={categoryCard.Date}
+                  imageurl={categoryCard.Images.formats.thumbnail.url}
+                  imagealt={categoryCard.Images.alternativeText}
+                  slug={categoryCard.Slug}
+                  path={`/posts/${categoryCard.Slug}`}
+                ></Card>
+              );
+            }) /***/
+          }
         </CardsSection>
       </PageWrapper>
       {/*
