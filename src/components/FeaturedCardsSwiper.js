@@ -1,5 +1,6 @@
 import React from "react";
 // , { useRef, useState }
+import { graphql } from "gatsby";
 import FeaturedCard from "./FeaturedCard";
 
 // Import Swiper React components
@@ -15,7 +16,44 @@ import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper/core";
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 // loop={true}
-const FeaturedCardsSwiper = () => {
+// <div id="PlusAd" style={{ display: `flex`, width: `100%` }}>
+//   <div style={{ flex: `3` }}>
+//   </div>
+
+//   <div className="Ad" style={{ flex: `1`, height: `100%` }}></div>
+// </div>
+
+export const articles = graphql`
+  {
+    allStrapiArticle(sort: { fields: Date, order: DESC }) {
+      edges {
+        node {
+          id
+          Titel
+          Date(locale: "en-gb", formatString: "LL")
+          Slug
+          Read_duration
+          Excerpt
+          Images {
+            alternativeText
+            formats {
+              thumbnail {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const FeaturedCardsSwiper = props => {
+  console.log(
+    props.articleQuery.allStrapiArticle.edges.filter(edge => {
+      return edge.node.Categories.includes("Featured");
+    })
+  );
   return (
     <Swiper
       spaceBetween={50}
@@ -34,41 +72,57 @@ const FeaturedCardsSwiper = () => {
         margin: `0em 0em 3em 0`,
       }}
     >
-      <SwiperSlide>
-        <FeaturedCard
-          title="How to be a man"
-          readtime={13}
-          excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
-          date="april 16, 2020"
-          imageurl=""
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <FeaturedCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <FeaturedCard
-          title="How to be a man"
-          readtime={45}
-          excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
-          date="april 16, 2020"
-          imageurl=""
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <FeaturedCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <FeaturedCard
-          title="How to be a man"
-          readtime={20}
-          excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
-          date="april 16, 2020"
-          imageurl=""
-        />
-      </SwiperSlide>
+      {props.children}
+      {/**props.data.allStrapiArticle.edges.map(edge => {
+        return (
+          <SwiperSlide key={edge.node.id}>
+            <FeaturedCard
+              title={edge.node.Titel}
+              readtime={edge.node.Read_duration}
+              excerpt={edge.node.Excerpt}
+              date={edge.node.Date}
+              imageurl={edge.node.Images.formats.thumbnail.url}
+              imagealt={edge.node.Images.alternativeText}
+              slug={edge.node.Slug}
+              path={`/posts/${edge.node.Slug}`}
+            ></FeaturedCard>
+          </SwiperSlide>
+        );
+      }) */}
     </Swiper>
   );
 };
 
 export default FeaturedCardsSwiper;
+
+// <FeaturedCard
+//   title="How to be a man"
+//   readtime={13}
+//   excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
+//   date="april 16, 2020"
+//   imageurl=""
+// />
+// <SwiperSlide>
+//   <FeaturedCard />
+// </SwiperSlide>
+// <SwiperSlide>
+//   <FeaturedCard
+//     title="How to be a man"
+//     readtime={45}
+//     excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
+//     date="april 16, 2020"
+//     imageurl=""
+//   />
+// </SwiperSlide>
+// <SwiperSlide>
+//   <FeaturedCard />
+// </SwiperSlide>
+// <SwiperSlide>
+//   <FeaturedCard
+//     title="How to be a man"
+//     readtime={20}
+//     excerpt="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus officia aut quaerat veniam sunt corporis corrupti sequi ex quam non abi eleyi o bgo ni?Lorem ipsum dolor sit amet, consectetur adipisicing elit.    rerg"
+//     date="april 16, 2020"
+//     imageurl=""
+//   />
+// </SwiperSlide>

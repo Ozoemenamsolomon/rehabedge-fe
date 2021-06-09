@@ -20,6 +20,9 @@ export const query = graphql`
         node {
           id
           Titel
+          Categories {
+            name
+          }
           Date(locale: "en-gb", formatString: "LL")
           Slug
           Read_duration
@@ -43,25 +46,26 @@ const IndexPage = ({ data }) => {
     <Layout>
       <PageWrapper>
         <Seo title="Home" />
-
-        <FeaturedCardsSwiper></FeaturedCardsSwiper>
+        <FeaturedCardsSwiper articleQuery={data}></FeaturedCardsSwiper>
         <Ad>AD Belongs Here!</Ad>
         <CardsSection sectionTitle="Recent">
-          {data.allStrapiArticle.edges.map(edge => {
-            return (
-              <Card
-                key={edge.node.id}
-                title={edge.node.Titel}
-                readtime={edge.node.Read_duration}
-                excerpt={edge.node.Excerpt}
-                date={edge.node.Date}
-                imageurl={edge.node.Images.formats.thumbnail.url}
-                imagealt={edge.node.Images.alternativeText}
-                slug={edge.node.Slug}
-                path={`/posts/${edge.node.Slug}`}
-              ></Card>
-            );
-          })}
+          {
+            data.allStrapiArticle.edges.map(edge => {
+              return (
+                <Card
+                  key={edge.node.id}
+                  title={edge.node.Titel}
+                  readtime={edge.node.Read_duration}
+                  excerpt={edge.node.Excerpt}
+                  date={edge.node.Date}
+                  imageurl={edge.node.Images.formats.thumbnail.url}
+                  imagealt={edge.node.Images.alternativeText}
+                  slug={edge.node.Slug}
+                  path={`/posts/${edge.node.Slug}`}
+                ></Card>
+              );
+            }) /***/
+          }
         </CardsSection>
         <NewsLetter></NewsLetter>
       </PageWrapper>

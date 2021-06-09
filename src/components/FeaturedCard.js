@@ -7,8 +7,8 @@ const FeaturedCard = props => {
   return (
     <FeaturedWrapper>
       <CardDiv>
-        <CardLeft>
-          <CardTitleSmall>
+        <CardLeft imageurl={props.imageurl}>
+          <CardTitleSmall title={props.imagealt ? `${props.imagealt}` : ``}>
             <CardTitleH3>{props.title || "Please add a title"}</CardTitleH3>
             <span>
               <ReadTime>
@@ -21,7 +21,7 @@ const FeaturedCard = props => {
         </CardLeft>
         <CardRight>
           <CardRightContent>
-            <CardTitleBig>
+            <CardTitleBig title={props.imagealt ? `${props.imagealt}` : ``}>
               <CardTitleH3Big>
                 {props.title || "Please add a title"}
               </CardTitleH3Big>
@@ -42,7 +42,7 @@ const FeaturedCard = props => {
                     ? `Read more on - ${props.title}`
                     : `Read more on this topic`
                 }
-                to="/"
+                to={props.path}
                 style={{ textDecoration: `none`, color: `#000` }}
               >
                 <CardRightContentButton>Read More</CardRightContentButton>

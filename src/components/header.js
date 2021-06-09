@@ -155,17 +155,29 @@ const NavLink = styled(Link)`
   color: #fff;
   text-decoration: none;
   transition: all 0.3s ease;
-  display: block;
+  display: flex;
+  justify-content: center;
   padding: 1em 0.5em;
-  &:hover,
-  &:active {
-    background-color: white;
-    color: #2f4293;
+  position: relative;
+  &::after {
+    content: "";
+    width: 90%;
+    height: 6%;
+    background-color: #fff;
+    position: absolute;
+    bottom: 20%;
+    transition: transform 0.1s ease-in-out;
+    transform: scalex(0);
+    transform-origin: center;
+  }
+
+  &:hover::after,
+  &:active::after {
+    transform: scale(1);
   }
   @media (min-width: 900px) {
     & {
       margin-left: 0.2em;
-      border-radius: 2em;
     }
   }
 `;
