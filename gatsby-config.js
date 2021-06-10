@@ -8,6 +8,10 @@ module.exports = {
     DEV_SSR: true,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: { trackingId: "G-8LXL13QNTX" },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
