@@ -29,7 +29,7 @@ const FeaturedCardsSwiper = props => {
       slidesPerView={1}
       autoplay={{
         delay: 4500,
-        disableOnInteraction: true,
+        disableOnInteraction: false,
       }}
       pagination={{
         clickable: true,
@@ -51,7 +51,7 @@ const FeaturedCardsSwiper = props => {
                 readtime={edge.node.Read_duration}
                 excerpt={edge.node.Excerpt}
                 date={edge.node.Date}
-                imageurl={edge.node.Images.formats.thumbnail.url}
+                imageurl={edge.node.Images.formats.small.url}
                 imagealt={edge.node.Images.alternativeText}
                 slug={edge.node.Slug}
                 path={`/posts/${edge.node.Slug}`}

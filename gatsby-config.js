@@ -8,10 +8,6 @@ module.exports = {
     DEV_SSR: true,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: { trackingId: "G-8LXL13QNTX" },
-    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
@@ -47,6 +43,10 @@ module.exports = {
         singleTypes: ["about-us"],
         queryLimit: 1000,
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: { trackingId: "G-8LXL13QNTX", head: false, respectDNT: true },
     },
     {
       resolve: `gatsby-transformer-remark`,

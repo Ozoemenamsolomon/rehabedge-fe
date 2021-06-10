@@ -50,7 +50,10 @@ export const query = graphql`
     Images {
       alternativeText
       formats {
-        thumbnail {
+        large {
+          url
+        }
+        small {
           url
         }
       }
@@ -68,23 +71,21 @@ const IndexPage = ({ data }) => {
         ></FeaturedCardsSwiper>
         <Ad>AD Belongs Here!</Ad>
         <CardsSection sectionTitle="Recent">
-          {
-            data.allStrapiArticle.edges.map(edge => {
-              return (
-                <Card
-                  key={edge.node.id}
-                  title={edge.node.Titel}
-                  readtime={edge.node.Read_duration}
-                  excerpt={edge.node.Excerpt}
-                  date={edge.node.Date}
-                  imageurl={edge.node.Images.formats.thumbnail.url}
-                  imagealt={edge.node.Images.alternativeText}
-                  slug={edge.node.Slug}
-                  path={`/posts/${edge.node.Slug}`}
-                ></Card>
-              );
-            }) /***/
-          }
+          {data.allStrapiArticle.edges.map(edge => {
+            return (
+              <Card
+                key={edge.node.id}
+                title={edge.node.Titel}
+                readtime={edge.node.Read_duration}
+                excerpt={edge.node.Excerpt}
+                date={edge.node.Date}
+                imageurl={edge.node.Images.formats.small.url}
+                imagealt={edge.node.Images.alternativeText}
+                slug={edge.node.Slug}
+                path={`/posts/${edge.node.Slug}`}
+              ></Card>
+            );
+          })}
         </CardsSection>
         <NewsLetter></NewsLetter>
       </PageWrapper>
