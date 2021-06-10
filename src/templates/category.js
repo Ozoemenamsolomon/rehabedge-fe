@@ -39,7 +39,7 @@ const category = ({ data }) => {
   return (
     <Layout>
       <PageWrapper>
-        <Seo title="Home" />
+        <Seo title={data.allStrapiCategory.nodes[0].name} />
         <CardsSection sectionTitle={data.allStrapiCategory.nodes[0].name}>
           {
             categoryCards.map(categoryCard => {

@@ -24,7 +24,7 @@ const about = ({ data }) => {
   return (
     <Layout>
       <PageWrapper>
-        <Seo title="Home" />
+        <Seo title="About" />
         <AboutTitle>About</AboutTitle>
         <PostContent>
           <ReactMarkdown

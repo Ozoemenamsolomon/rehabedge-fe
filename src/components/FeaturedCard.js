@@ -36,17 +36,19 @@ const FeaturedCard = props => {
             <Excerpt>{props.excerpt || "Please include an excerpt"}</Excerpt>
             <DateButton>
               <Date>{props.date || "forgot the date?"}</Date>
-              <Link
+              {/* <Link
+              > */}
+              <CardRightContentButton
                 title={
                   props.title
                     ? `Read more on - ${props.title}`
                     : `Read more on this topic`
                 }
                 to={props.path}
-                style={{ textDecoration: `none`, color: `#000` }}
               >
-                <CardRightContentButton>Read More</CardRightContentButton>
-              </Link>
+                Read More
+              </CardRightContentButton>
+              {/* </Link> */}
             </DateButton>
           </CardRightContent>
         </CardRight>
@@ -207,11 +209,11 @@ const DateButton = styled.div`
 const Date = styled.small`
   text-transform: capitalize;
 `;
-const CardRightContentButton = styled.button`
-  padding: 0.6em 0.5em;
+const CardRightContentButton = styled(Link)`
+  padding: 0.4em 0.5em;
   background-color: #2f4293;
   border: none;
-  cursor: inherit;
   color: #fff;
   border-radius: 0.3em;
+  text-decoration: none;
 `;

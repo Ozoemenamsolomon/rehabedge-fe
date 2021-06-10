@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import { graphql } from "gatsby";
 import PageWrapper from "../components/PageWrapper";
 import styled from "styled-components";
+import Seo from "../components/seo";
 
 export const query = graphql`
   query($slug: String) {
@@ -32,6 +33,10 @@ export const query = graphql`
 const SinglePost = ({ data }) => {
   return (
     <Layout>
+      <Seo
+        title={data.allStrapiArticle.nodes[0].Titel}
+        description={data.allStrapiArticle.nodes[0].Excerpt}
+      />
       <div
         id="TitleImage"
         style={{
@@ -86,6 +91,10 @@ const PostContent = styled.div`
 
   & h2 {
     padding-bottom: 0.2em;
-    border-bottom: 0.2px solid #2f4293;
+    border-bottom: 4px solid #2f4293;
+  }
+  & blockquote {
+    border-left: 4px solid #2f4293;
+    padding-left: 1em;
   }
 `;

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `RehabEdge Blog`,
-    description: `RehabEdge Blog`,
+    description: `Rehab Edge is a media publication for physical and Orthopaedic rehabilitation professionals which delivers valuable news, insights, articles, job postings, and magazine publications to your doorstep.`,
     author: `Ozoemenam Solomon Obinna | https://solozo.page`,
   },
   flags: {

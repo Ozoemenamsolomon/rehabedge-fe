@@ -23,7 +23,7 @@ const Card = props => {
           <p>{props.excerpt || "Please include an excerpt"}</p>
           <DateButton>
             <Date>{props.date || "forgot the date?"}</Date>
-            <Link
+            {/* <Link
               title={
                 props.title
                   ? `Read more on - ${props.title}`
@@ -31,9 +31,19 @@ const Card = props => {
               }
               to={props.path}
               style={{ textDecoration: `none`, color: `#000` }}
+            > */}
+
+            <CardBottomContentButton
+              title={
+                props.title
+                  ? `Read more on - ${props.title}`
+                  : `Read more on this topic`
+              }
+              to={props.path}
             >
-              <CardBottomContentButton>Read More</CardBottomContentButton>
-            </Link>
+              Read More
+            </CardBottomContentButton>
+            {/* </Link> */}
           </DateButton>
         </CardBottomContent>
       </CardBottom>
@@ -128,11 +138,11 @@ const Date = styled.small`
   color: #b7b7b7;
   visibility: hidden;
 `;
-const CardBottomContentButton = styled.button`
-  padding: 0.6em 0.5em;
+const CardBottomContentButton = styled(Link)`
+  padding: 0.4em 0.5em;
   background-color: #2f4293;
   border: none;
-  cursor: inherit;
   color: #fff;
   border-radius: 0.3em;
+  text-decoration: none;
 `;
