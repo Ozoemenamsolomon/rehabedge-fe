@@ -208,6 +208,7 @@ const DateButton = styled.div`
 `;
 const Date = styled.small`
   text-transform: capitalize;
+  visibility: hidden;
 `;
 const CardRightContentButton = styled(Link)`
   padding: 0.4em 0.5em;

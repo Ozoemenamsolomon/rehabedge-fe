@@ -6,26 +6,16 @@ const NewsLetter = () => {
     <NewsLetterDiv>
       <NewsLetterTitle>Subsribe to our newsletter</NewsLetterTitle>
       <NewsLetterWrapper
-      /*action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdSHa-ljM22hItoia69R7UweavCdzYftqhnZr-AhlE1EJrnAg/formResponse"
-        method="POST"*/
+        data-netlify="true"
+        name="newsletter"
+        method="POST"
+        netlify-honeypot="prevent-spamming"
       >
         <Name>
           <NameLabel htmlFor="name">Name:</NameLabel>
-          <NameInput
-            autoComplete="name"
-            type="text"
-            name="name"
-            id="name"
-            /*Be careful!!🤣------------------------------ className="quantumWizTextinputPaperinputInput exportInput"
-            jsname="YPqjbf"
-            tabindex="0"
-            aria-labelledby="i1"
-            aria-describedby="i2 i3"
-            dir="auto"
-            data-initial-dir="auto"
-            data-initial-value=""*/
-          />
+          <NameInput autoComplete="name" type="text" name="name" id="name" />
         </Name>
+        <PreventSpamming name="prevent-spamming" />
         <Email>
           <EmailLabel htmlFor="email">E-Mail: </EmailLabel>
           <EmailInput
@@ -34,31 +24,9 @@ const NewsLetter = () => {
             name="email"
             id="email"
             required
-            /*Be careful!!🤣------------------------------
-            className="quantumWizTextinputPaperinputInput exportInput"
-            jsname="YPqjbf"
-            tabindex="0"
-            aria-labelledby="i5"
-            aria-describedby="i6 i7"
-            dir="auto"
-            data-initial-dir="auto"
-            data-initial-value=""*/
           />
         </Email>
-        <Button
-          type="submit"
-          /*Be careful!!🤣------------------------------
-
-          role="button"
-          className="appsMaterialWizButtonEl appsMaterialWizButtonPaperbuttonEl appsMaterialWizButtonPaperbuttonFilled freebirdFormviewerViewNavigationSubmitButton freebirdThemedFilledButtonM2"
-          jscontroller="VXdfxd"
-          jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue;touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc(preventMouseEvents=true|preventDefault=true); touchcancel:JMtRjd;focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;"
-          jsshadow=""
-          jsname="M2UYVd"
-          tabindex="0"*/
-        >
-          Submit
-        </Button>
+        <Button type="submit">Submit</Button>
       </NewsLetterWrapper>
     </NewsLetterDiv>
   );
@@ -144,6 +112,9 @@ const NameInput = styled.input`
     border-color: map-get($color, blue);
     outline: map-get($border, thickness) solid map-get($color, blue);
   }
+`;
+const PreventSpamming = styled.input`
+  display: none;
 `;
 const Email = styled(Name)``;
 const EmailLabel = styled(NameLabel)``;
