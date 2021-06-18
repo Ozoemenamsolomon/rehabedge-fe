@@ -37,34 +37,34 @@ const SinglePost = ({ data }) => {
         title={data.allStrapiArticle.nodes[0].Titel}
         description={data.allStrapiArticle.nodes[0].Excerpt}
       />
-      <div
-        id="TitleImage"
-        style={{
-          display: `flex`,
-          flexDirection: `column`,
-          alignItems: `center`,
-          justifyContent: `center`,
-        }}
-      >
-        <h1
+      <PageWrapper>
+        <div
+          id="TitleImage"
           style={{
-            textTransform: `uppercase`,
-            textAlign: `center`,
-            marginTop: `1em`,
+            display: `flex`,
+            flexDirection: `column`,
+            alignItems: `center`,
+            justifyContent: `center`,
           }}
         >
-          {data.allStrapiArticle.nodes[0].Titel}
-        </h1>
-        <img
-          style={{
-            maxWidth: `85%`,
-            margin: `3em 0`,
-          }}
-          src={data.allStrapiArticle.nodes[0].Images.url}
-          alt=""
-        />
-      </div>
-      <PageWrapper>
+          <h1
+            style={{
+              textTransform: `uppercase`,
+              textAlign: `center`,
+              marginTop: `1em`,
+            }}
+          >
+            {data.allStrapiArticle.nodes[0].Titel}
+          </h1>
+          <img
+            style={{
+              maxWidth: `85%`,
+              margin: `3em 0`,
+            }}
+            src={data.allStrapiArticle.nodes[0].Images.url}
+            alt=""
+          />
+        </div>
         <PostContent>
           <ReactMarkdown
             remarkPlugins={[gfm]}
@@ -80,13 +80,15 @@ const SinglePost = ({ data }) => {
 export default SinglePost;
 
 const PostContent = styled.div`
+  text-align: justify;
+  overflow-wrap: break-word;
   & * {
     margin: revert;
     padding: revert;
     box-sizing: revert;
   }
   & h1 {
-    display: none;
+    /* display: none; */
   }
 
   & h2 {
@@ -96,5 +98,8 @@ const PostContent = styled.div`
   & blockquote {
     border-left: 4px solid #2f4293;
     padding-left: 1em;
+  }
+  & img {
+    max-width: 90%;
   }
 `;

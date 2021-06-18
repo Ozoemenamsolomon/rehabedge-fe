@@ -23,15 +23,6 @@ const Card = props => {
           <p>{props.excerpt || "Please include an excerpt"}</p>
           <DateButton>
             <Date>{props.date || "forgot the date?"}</Date>
-            {/* <Link
-              title={
-                props.title
-                  ? `Read more on - ${props.title}`
-                  : `Read more on this topic`
-              }
-              to={props.path}
-              style={{ textDecoration: `none`, color: `#000` }}
-            > */}
 
             <CardBottomContentButton
               title={
@@ -40,6 +31,7 @@ const Card = props => {
                   : `Read more on this topic`
               }
               to={props.path}
+              aria-label={props.title || "Please add a title"}
             >
               Read More
             </CardBottomContentButton>

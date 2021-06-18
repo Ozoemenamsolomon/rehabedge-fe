@@ -36,8 +36,6 @@ const FeaturedCard = props => {
             <Excerpt>{props.excerpt || "Please include an excerpt"}</Excerpt>
             <DateButton>
               <Date>{props.date || "forgot the date?"}</Date>
-              {/* <Link
-              > */}
               <CardRightContentButton
                 title={
                   props.title
@@ -45,10 +43,10 @@ const FeaturedCard = props => {
                     : `Read more on this topic`
                 }
                 to={props.path}
+                aria-label={props.title || "Please add a title"}
               >
                 Read More
               </CardRightContentButton>
-              {/* </Link> */}
             </DateButton>
           </CardRightContent>
         </CardRight>

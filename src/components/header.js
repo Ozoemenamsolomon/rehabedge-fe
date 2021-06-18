@@ -61,19 +61,24 @@ const Header = ({ siteTitle }) => {
                 SPOTLIGHT
               </NavLink>
             </li>
-            <li>
+            <li data-hasdropdown="true">
               <NavLink to="/categories/people" alt="Category:People">
-                PEOPLE
+                PEOPLE <span class="material-icons">arrow_drop_down</span>
               </NavLink>
+              <Dropdown>
+                <li>
+                  <NavLink
+                    to="/categories/clinician-insight"
+                    alt="Category:People"
+                  >
+                    CLINICIAN INSIGHT
+                  </NavLink>
+                </li>
+              </Dropdown>
             </li>
             <li>
               <NavLink to="/categories/magazine" alt="Category:Magazine">
                 MAGAZINE
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/about" alt="About">
-                ABOUT US
               </NavLink>
             </li>
           </NavOptions>
@@ -152,6 +157,12 @@ const NavOptions = styled.ul`
   & li {
     list-style: none;
   }
+  & [data-hasdropdown="true"]:hover > ul {
+    visibility: visible;
+  }
+  & [data-hasdropdown="true"]:hover span.material-icons {
+    transform: rotate(180deg);
+  }
   @media (max-width: 900px) {
     height: 100vh;
     top: 0;
@@ -162,7 +173,7 @@ const NavOptions = styled.ul`
     z-index: -1;
     position: fixed;
     justify-content: center;
-    width: 100%;
+    width: 70%;
     text-align: center;
     transition: all 0.5s ease-in;
   }
@@ -186,6 +197,14 @@ const NavLink = styled(Link)`
     transform: scalex(0);
     transform-origin: center;
   }
+  & > span.material-icons {
+    transition: all 0.3s ease-in-out;
+  }
+  @media (max-width: 900px) {
+    & > span.material-icons {
+      display: none;
+    }
+  }
 
   &:hover::after,
   &:active::after {
@@ -194,6 +213,21 @@ const NavLink = styled(Link)`
   @media (min-width: 900px) {
     & {
       margin-left: 0.2em;
+    }
+  }
+`;
+const Dropdown = styled.ul`
+  transform: translate(-15%, -24%);
+  position: absolute;
+  background-color: #2f4293;
+  visibility: hidden;
+  box-shadow: 0px 12px 12px -5.9px #00000075;
+  @media (max-width: 900px) {
+    & {
+      transform: translate(0%, 0%);
+      position: revert;
+      box-shadow: none;
+      visibility: visible;
     }
   }
 `;
