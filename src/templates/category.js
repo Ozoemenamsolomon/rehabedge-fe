@@ -21,12 +21,8 @@ export const query = graphql`
           Read_duration
           Excerpt
           Images {
+            url
             alternativeText
-            formats {
-              thumbnail {
-                url
-              }
-            }
           }
         }
       }
@@ -43,19 +39,35 @@ const category = ({ data }) => {
         <CardsSection sectionTitle={data.allStrapiCategory.nodes[0].name}>
           {
             categoryCards.map(categoryCard => {
-              return (
-                <Card
-                  key={categoryCard.id}
-                  title={categoryCard.Titel}
-                  readtime={categoryCard.Read_duration}
-                  excerpt={categoryCard.Excerpt}
-                  date={categoryCard.Date}
-                  imageurl={categoryCard.Images.formats.thumbnail.url}
-                  imagealt={categoryCard.Images.alternativeText}
-                  slug={categoryCard.Slug}
-                  path={`/posts/${categoryCard.Slug}`}
-                ></Card>
-              );
+              if (data.allStrapiCategory.nodes[0].name === "Magazine") {
+                return (
+                  <Card
+                    key={categoryCard.id}
+                    title={"I am suppose to be a magazine"}
+                    readtime={categoryCard.Read_duration}
+                    excerpt={"still in the making please!"}
+                    date={categoryCard.Date}
+                    imageurl={categoryCard.Images.url}
+                    imagealt={categoryCard.Images.alternativeText}
+                    slug={categoryCard.Slug}
+                    path={`/posts/${categoryCard.Slug}`}
+                  ></Card>
+                );
+              } else {
+                return (
+                  <Card
+                    key={categoryCard.id}
+                    title={categoryCard.Titel}
+                    readtime={categoryCard.Read_duration}
+                    excerpt={categoryCard.Excerpt}
+                    date={categoryCard.Date}
+                    imageurl={categoryCard.Images.url}
+                    imagealt={categoryCard.Images.alternativeText}
+                    slug={categoryCard.Slug}
+                    path={`/posts/${categoryCard.Slug}`}
+                  ></Card>
+                );
+              }
             }) /***/
           }
         </CardsSection>

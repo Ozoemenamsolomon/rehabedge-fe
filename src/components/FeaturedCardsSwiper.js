@@ -49,9 +49,9 @@ const FeaturedCardsSwiper = props => {
               <FeaturedCard
                 title={edge.node.Titel}
                 readtime={edge.node.Read_duration}
-                excerpt={edge.node.Excerpt}
+                excerpt={`${edge.node.Excerpt.trim()}...`}
                 date={edge.node.Date}
-                imageurl={edge.node.Images.formats.small.url}
+                imageurl={edge.node.Images.url}
                 imagealt={edge.node.Images.alternativeText}
                 slug={edge.node.Slug}
                 path={`/posts/${edge.node.Slug}`}

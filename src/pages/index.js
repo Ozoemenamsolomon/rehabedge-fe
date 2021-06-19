@@ -49,19 +49,16 @@ export const query = graphql`
     Excerpt
     Images {
       alternativeText
-      formats {
-        large {
-          url
-        }
-        small {
-          url
-        }
-      }
+
+      url
     }
   }
 `;
 
 const IndexPage = ({ data }) => {
+  // data.allStrapiArticle.edges.forEach(_ => {
+  //   console.log(_.node.Images);
+  // });
   return (
     <Layout>
       <PageWrapper>
@@ -77,9 +74,9 @@ const IndexPage = ({ data }) => {
                 key={edge.node.id}
                 title={edge.node.Titel}
                 readtime={edge.node.Read_duration}
-                excerpt={edge.node.Excerpt}
+                excerpt={`${edge.node.Excerpt.trim()}...`}
                 date={edge.node.Date}
-                imageurl={edge.node.Images.formats.small.url}
+                imageurl={edge.node.Images.url}
                 imagealt={edge.node.Images.alternativeText}
                 slug={edge.node.Slug}
                 path={`/posts/${edge.node.Slug}`}

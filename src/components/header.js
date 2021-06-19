@@ -63,7 +63,7 @@ const Header = ({ siteTitle }) => {
             </li>
             <li data-hasdropdown="true">
               <NavLink to="/categories/people" alt="Category:People">
-                PEOPLE <span class="material-icons">arrow_drop_down</span>
+                PEOPLE <span className="material-icons">arrow_drop_down</span>
               </NavLink>
               <Dropdown>
                 <li>

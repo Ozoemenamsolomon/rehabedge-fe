@@ -45,7 +45,7 @@ const Footer = () => {
                   rel=" noopener"
                   href="https://www.facebook.com/rehabedgemagazine/"
                 >
-                  <span class="material-icons">facebook</span>
+                  <span className="material-icons">facebook</span>
                 </FooterLink>
               </li>
               <li>
@@ -53,7 +53,7 @@ const Footer = () => {
                   aria-label="E-mail link"
                   href="mailto:info@rehabedge.ng"
                 >
-                  <span class="material-icons">email</span>
+                  <span className="material-icons">email</span>
                 </FooterLink>
               </li>
               <li>
@@ -63,7 +63,7 @@ const Footer = () => {
                   rel=" noopener"
                   href="https://wa.link/psw6a3"
                 >
-                  <span class="material-icons">chat</span>
+                  <span className="material-icons">chat</span>
                 </FooterLink>
               </li>
             </ul>
