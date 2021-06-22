@@ -6,16 +6,20 @@ const NewsLetter = () => {
     <NewsLetterDiv>
       <NewsLetterTitle>Subsribe to our newsletter</NewsLetterTitle>
       <NewsLetterWrapper
-        data-netlify="true"
-        name="newsletter"
+        name="newsletter-form"
         method="POST"
-        netlify-honeypot="prevent-spamming"
+        // netlify-honeypot="bot-field"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
         <Name>
           <NameLabel htmlFor="name">Name:</NameLabel>
           <NameInput autoComplete="name" type="text" name="name" id="name" />
         </Name>
-        <PreventSpamming name="prevent-spamming" />
+        {/* <PreventSpamming name="prevent-spamming" /> */}
+        <label style={{ display: `hidden` }}>
+          Don’t fill this out if you’re human: <input name="bot-field" />
+        </label>
         <Email>
           <EmailLabel htmlFor="email">E-Mail: </EmailLabel>
           <EmailInput
@@ -113,9 +117,9 @@ const NameInput = styled.input`
     outline: map-get($border, thickness) solid map-get($color, blue);
   }
 `;
-const PreventSpamming = styled.input`
-  display: none;
-`;
+// const PreventSpamming = styled.input`
+//   display: none;
+// `;
 const Email = styled(Name)``;
 const EmailLabel = styled(NameLabel)``;
 const EmailInput = styled(NameInput)``;
