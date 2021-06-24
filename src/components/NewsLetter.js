@@ -5,22 +5,11 @@ const NewsLetter = () => {
   return (
     <NewsLetterDiv>
       <NewsLetterTitle>Subsribe to our newsletter</NewsLetterTitle>
-      <form
-        name="rehabedge-newsletter"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        onSubmit={e => {
-          e.preventDefault();
-        }}
-      >
+      <form name="rehabedge-newsletter" method="post" data-netlify="true">
         <Name>
           <NameLabel htmlFor="name">Name:</NameLabel>
           <NameInput autoComplete="name" type="text" name="name" id="name" />
         </Name>
-        <label style={{ display: `none` }}>
-          Don’t fill this out if you’re human: <input name="bot-field" />
-        </label>
         <Email>
           <EmailLabel htmlFor="email">E-Mail: </EmailLabel>
           <EmailInput
