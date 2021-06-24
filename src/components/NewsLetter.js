@@ -5,11 +5,12 @@ const NewsLetter = () => {
   return (
     <NewsLetterDiv>
       <NewsLetterTitle>Subsribe to our newsletter</NewsLetterTitle>
-      <NewsLetterWrapper
+      <form
         name="rehabedge-newsletter"
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        action="/"
       >
         <Name>
           <NameLabel htmlFor="name">Name:</NameLabel>
@@ -29,7 +30,7 @@ const NewsLetter = () => {
           />
         </Email>
         <Button type="submit">Submit</Button>
-      </NewsLetterWrapper>
+      </form>
     </NewsLetterDiv>
   );
 };
@@ -91,8 +92,6 @@ const NameInput = styled.input`
   height: 100%;
   flex: 1;
   padding: 0 0.5em;
-
-  // be careful!!!🤣
 
   $border: (
     radius: 0.25em,
