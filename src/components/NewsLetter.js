@@ -6,9 +6,8 @@ const NewsLetter = () => {
     <NewsLetterDiv>
       <NewsLetterTitle>Subsribe to our newsletter</NewsLetterTitle>
       <NewsLetterWrapper
-        name="newsletter-form"
+        name="rehabedge-newsletter"
         method="post"
-        // netlify-honeypot="bot-field"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
@@ -16,7 +15,6 @@ const NewsLetter = () => {
           <NameLabel htmlFor="name">Name:</NameLabel>
           <NameInput autoComplete="name" type="text" name="name" id="name" />
         </Name>
-        {/* <PreventSpamming name="prevent-spamming" /> */}
         <label style={{ display: `none` }}>
           Don’t fill this out if you’re human: <input name="bot-field" />
         </label>
