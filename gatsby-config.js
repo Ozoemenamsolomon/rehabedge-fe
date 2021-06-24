@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `RehabEdge Blog`,
+    title: `RehabEdge`,
     description: `Rehab Edge is a media publication for physical and Orthopaedic rehabilitation professionals which delivers valuable news, insights, articles, job postings, and magazine publications to your doorstep.`,
     author: `Ozoemenam Solomon Obinna | https://solozo.page`,
   },
@@ -24,7 +24,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `RehabEdge Blog`,
+        name: `RehabEdge`,
         short_name: `RehabEdge`,
         start_url: `/`,
         background_color: `#2f4293`,
@@ -39,7 +39,7 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: "https://rehabedge-be.herokuapp.com",
-        collectionTypes: ["article", "category"],
+        collectionTypes: ["article", "category", "newsletter"],
         singleTypes: ["about-us"],
         queryLimit: 1000,
       },

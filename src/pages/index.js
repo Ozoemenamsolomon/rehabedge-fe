@@ -15,7 +15,10 @@ import NewsLetter from "../components/NewsLetter";
 
 export const query = graphql`
   query one {
-    allStrapiArticle(sort: { fields: Date, order: DESC }) {
+    allStrapiArticle(
+      sort: { fields: Date, order: DESC }
+      filter: { Categories: { elemMatch: { name: { ne: "Magazine" } } } }
+    ) {
       edges {
         node {
           ...test
