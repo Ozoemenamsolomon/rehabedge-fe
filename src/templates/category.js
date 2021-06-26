@@ -33,7 +33,7 @@ export const query = graphql`
 const category = ({ data }) => {
   const categoryCards = data.allStrapiCategory.nodes[0].article;
   return (
-    <Layout>
+    <Layout page={data.allStrapiCategory.nodes[0].name}>
       <PageWrapper>
         <Seo title={data.allStrapiCategory.nodes[0].name} />
         <CardsSection sectionTitle={data.allStrapiCategory.nodes[0].name}>

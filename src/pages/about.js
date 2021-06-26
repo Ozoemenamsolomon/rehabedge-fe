@@ -22,7 +22,7 @@ export const query = graphql`
 const about = ({ data }) => {
   const aboutRichText = data.allStrapiAboutUs.nodes[0];
   return (
-    <Layout>
+    <Layout page="about">
       <PageWrapper>
         <Seo title="About" />
         <AboutTitle>About</AboutTitle>

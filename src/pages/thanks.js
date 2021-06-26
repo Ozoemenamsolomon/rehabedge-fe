@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../../components/layout";
-import Seo from "../../components/seo";
-import PageWrapper from "../../components/PageWrapper";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import PageWrapper from "../components/PageWrapper";
 import styled from "styled-components";
 
 const index = () => {
@@ -9,8 +9,8 @@ const index = () => {
     <Layout>
       <PageWrapper>
         <Seo title="Home" />
-        <CategoryTitle>Category</CategoryTitle>
-        <AboutText>Hello from Categories</AboutText>
+        <CategoryTitle>Thanks for Your subscription</CategoryTitle>
+        <AboutText>Go Back</AboutText>
       </PageWrapper>
     </Layout>
   );

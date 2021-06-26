@@ -5,11 +5,18 @@ const NewsLetter = () => {
   return (
     <NewsLetterDiv>
       <NewsLetterTitle>Subsribe to our newsletter</NewsLetterTitle>
-      <form name="rehabedge-newsletter" method="post" data-netlify="true">
+      <NewsLetterWrapper
+        name="rehabedge-newsletter"
+        method="POST"
+        action="https://formspree.io/f/xknkzglj"
+      >
         <Name>
           <NameLabel htmlFor="name">Name:</NameLabel>
           <NameInput autoComplete="name" type="text" name="name" id="name" />
         </Name>
+        <label style={{ display: `none` }}>
+          Don’t fill this out if you’re human: <input name="bot-field" />
+        </label>
         <Email>
           <EmailLabel htmlFor="email">E-Mail: </EmailLabel>
           <EmailInput
@@ -21,7 +28,7 @@ const NewsLetter = () => {
           />
         </Email>
         <Button type="submit">Submit</Button>
-      </form>
+      </NewsLetterWrapper>
     </NewsLetterDiv>
   );
 };

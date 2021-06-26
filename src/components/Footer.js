@@ -9,15 +9,7 @@ const Footer = () => {
         {/* <div>
         </div> */}
         <p>© {new Date().getFullYear()}, RehabEdge. All Rights Reserved.</p>
-        <ul
-          style={{
-            display: `flex`,
-            gap: `2em`,
-            listStyle: `none`,
-            color: `#fff`,
-            // marginTop: `1em`,
-          }}
-        >
+        <AboutAndSocials>
           <li>
             <FooterLinkWithin to="/about" alt="About">
               ABOUT US
@@ -68,7 +60,7 @@ const Footer = () => {
               </li>
             </ul>
           </li>
-        </ul>
+        </AboutAndSocials>
         <p>
           Design and Developed by
           {` `}
@@ -108,6 +100,18 @@ const FooterWrapper = styled.div`
   @media (max-width: 600px) {
     & {
       font-size: smaller;
+    }
+  }
+`;
+
+const AboutAndSocials = styled.ul`
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  color: #fff;
+  @media (max-width: 900px) {
+    & {
+      margin: 1em 0em;
     }
   }
 `;

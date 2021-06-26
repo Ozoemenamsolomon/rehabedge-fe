@@ -6,7 +6,7 @@ import HamburgerMenu from "./HamburgerMenu";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
-const Header = ({ siteTitle }) => {
+const Header = props => {
   // determined if page has scrolled and if the view is on mobile
   const [scrolled, setScrolled] = useState(false);
 
@@ -47,6 +47,7 @@ const Header = ({ siteTitle }) => {
           <NavOptions>
             <li>
               <NavLink
+                id={props.page === "Featured Articles" ? "active" : ""}
                 to="/categories/featured-articles"
                 alt="Featured Article"
               >
@@ -55,6 +56,7 @@ const Header = ({ siteTitle }) => {
             </li>
             <li>
               <NavLink
+                id={props.page === "Spotlight" ? "active" : ""}
                 to="/categories/spotlight"
                 alt="Category:Featured Article"
               >
@@ -62,12 +64,17 @@ const Header = ({ siteTitle }) => {
               </NavLink>
             </li>
             <li data-hasdropdown="true">
-              <NavLink to="/categories/people" alt="Category:People">
+              <NavLink
+                id={props.page === "People" ? "active" : ""}
+                to="/categories/people"
+                alt="Category:People"
+              >
                 PEOPLE <span className="material-icons">arrow_drop_down</span>
               </NavLink>
               <Dropdown>
                 <li>
                   <NavLink
+                    id={props.page === "Clinician Insight" ? "active" : ""}
                     to="/categories/clinician-insight"
                     alt="Category:People"
                   >
@@ -77,7 +84,11 @@ const Header = ({ siteTitle }) => {
               </Dropdown>
             </li>
             <li>
-              <NavLink to="/categories/magazine" alt="Category:Magazine">
+              <NavLink
+                id={props.page === "Magazine" ? "active" : ""}
+                to="/categories/magazine"
+                alt="Category:Magazine"
+              >
                 MAGAZINE
               </NavLink>
             </li>
@@ -114,6 +125,7 @@ const MyHeader = styled.header`
   }
   & #menu:checked ~ ul {
     right: 0;
+    visibility: visible;
   }
 `;
 // style={{ }}   box-shadow: 0 2px 8px rgba(152,168,188,.2);
@@ -169,6 +181,7 @@ const NavOptions = styled.ul`
     right: -100%;
     display: flex;
     flex-direction: column;
+    visibility: hidden;
     background-color: #2f4293;
     z-index: -1;
     position: fixed;
@@ -209,6 +222,11 @@ const NavLink = styled(Link)`
   &:hover::after,
   &:active::after {
     transform: scale(1);
+  }
+  &#active::after {
+    transform: scale(1);
+    height: 65%;
+    mix-blend-mode: overlay;
   }
   @media (min-width: 900px) {
     & {
