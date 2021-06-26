@@ -39,7 +39,7 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: "https://rehabedge-be.herokuapp.com",
-        collectionTypes: ["article", "category", "newsletter"],
+        collectionTypes: ["article", "category"],
         singleTypes: ["about-us"],
         queryLimit: 1000,
       },

@@ -217,16 +217,18 @@ const NavLink = styled(Link)`
     & > span.material-icons {
       display: none;
     }
+    &#active::after {
+      height: 65%;
+      mix-blend-mode: overlay;
+    }
   }
 
+  &#active::after {
+    transform: scale(1);
+  }
   &:hover::after,
   &:active::after {
     transform: scale(1);
-  }
-  &#active::after {
-    transform: scale(1);
-    height: 65%;
-    mix-blend-mode: overlay;
   }
   @media (min-width: 900px) {
     & {
