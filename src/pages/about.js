@@ -24,7 +24,20 @@ const about = ({ data }) => {
   return (
     <Layout page="about">
       <PageWrapper>
-        <Seo title="About" />
+        <Seo
+          title="About"
+          meta={[
+            <meta property="og:title" content="About" />,
+            <meta property="og:description" content="About Rehabedge" />,
+            <meta property="og:type" content="website" />,
+            <meta
+              property="og:url"
+              content={`https://www.rehabedge.ng/about`}
+            />,
+            <meta name="twitter:card" content="summary" />,
+            <meta name="twitter:title" content="About" />,
+          ]}
+        />
         <AboutTitle>About</AboutTitle>
         <PostContent>
           <ReactMarkdown

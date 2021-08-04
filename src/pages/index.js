@@ -65,7 +65,17 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <PageWrapper>
-        <Seo title="Home" />
+        <Seo
+          title="Home"
+          meta={[
+            <meta property="og:title" content="Home" />,
+            <meta property="og:description" content="Rehabedge" />,
+            <meta property="og:type" content="website" />,
+            <meta property="og:url" content={`https://www.rehabedge.ng/`} />,
+            <meta name="twitter:card" content="summary" />,
+            <meta name="twitter:title" content="Home" />,
+          ]}
+        />
         <FeaturedCardsSwiper
           articleQuery={data.featuredArticle}
         ></FeaturedCardsSwiper>

@@ -35,7 +35,25 @@ const category = ({ data }) => {
   return (
     <Layout page={data.allStrapiCategory.nodes[0].name}>
       <PageWrapper>
-        <Seo title={data.allStrapiCategory.nodes[0].name} />
+        <Seo
+          title={data.allStrapiCategory.nodes[0].name}
+          meta={[
+            <meta
+              property="og:title"
+              content={data.allStrapiCategory.nodes[0].name}
+            />,
+            <meta property="og:type" content="website" />,
+            <meta
+              property="og:url"
+              content={`https://www.rehabedge.ng/categories/${data.allStrapiCategory.nodes[0].Slug}`}
+            />,
+            <meta name="twitter:card" content="summary" />,
+            <meta
+              name="twitter:title"
+              content={data.allStrapiCategory.nodes[0].name}
+            />,
+          ]}
+        />
         <CardsSection sectionTitle={data.allStrapiCategory.nodes[0].name}>
           {
             categoryCards.map(categoryCard => {

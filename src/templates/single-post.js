@@ -36,6 +36,39 @@ const SinglePost = ({ data }) => {
       <Seo
         title={data.allStrapiArticle.nodes[0].Titel}
         description={data.allStrapiArticle.nodes[0].Excerpt}
+        meta={[
+          <meta
+            property="og:title"
+            content={data.allStrapiArticle.nodes[0].Titel}
+          />,
+          <meta
+            property="og:description"
+            content={data.allStrapiArticle.nodes[0].Excerpt}
+          />,
+          <meta property="og:type" content="article" />,
+          <meta
+            property="og:url"
+            content={`https://www.rehabedge.ng/posts/${data.allStrapiArticle.nodes[0].Slug}`}
+          />,
+          <meta
+            property="og:image"
+            content={data.allStrapiArticle.nodes[0].Images.url}
+          />,
+
+          <meta name="twitter:card" content="summary" />,
+          <meta
+            name="twitter:title"
+            content={data.allStrapiArticle.nodes[0].Titel}
+          />,
+          <meta
+            name="twitter:description"
+            content={data.allStrapiArticle.nodes[0].Excerpt}
+          />,
+          <meta
+            name="twitter:image"
+            content={data.allStrapiArticle.nodes[0].Images.url}
+          />,
+        ]}
       />
       <PageWrapper>
         <div
