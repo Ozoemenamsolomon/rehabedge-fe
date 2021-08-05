@@ -47,6 +47,10 @@ function Seo({ description, lang, meta, title }) {
           content: title,
         },
         {
+          property: `fb:app_id`,
+          content: "2901978690090916",
+        },
+        {
           property: `og:description`,
           content: metaDescription,
         },
