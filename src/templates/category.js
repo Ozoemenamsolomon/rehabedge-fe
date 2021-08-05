@@ -45,7 +45,7 @@ const category = ({ data }) => {
             <meta property="og:type" content="website" />,
             <meta
               property="og:url"
-              content={`https://www.rehabedge.ng/categories/${data.allStrapiCategory.nodes[0].Slug}`}
+              content={`https://www.rehabedge.ng/categories/${data.allStrapiCategory.nodes[0].Slug}/`}
             />,
             <meta name="twitter:card" content="summary" />,
             <meta

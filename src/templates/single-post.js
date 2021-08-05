@@ -50,7 +50,7 @@ const SinglePost = ({ data }) => {
           <meta property="og:type" content="article" />,
           <meta
             property="og:url"
-            content={`https://www.rehabedge.ng/posts/${data.allStrapiArticle.nodes[0].Slug}`}
+            content={`https://www.rehabedge.ng/posts/${data.allStrapiArticle.nodes[0].Slug}/`}
           />,
           <meta
             property="og:image"

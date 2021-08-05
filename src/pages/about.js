@@ -32,7 +32,7 @@ const about = ({ data }) => {
             <meta property="og:type" content="website" />,
             <meta
               property="og:url"
-              content={`https://www.rehabedge.ng/about`}
+              content={`https://www.rehabedge.ng/about/`}
             />,
             <meta name="twitter:card" content="summary" />,
             <meta name="twitter:title" content="About" />,
