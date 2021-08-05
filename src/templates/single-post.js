@@ -20,6 +20,8 @@ export const query = graphql`
         Excerpt
         Images {
           url
+          height
+          width
         }
         Categories {
           name
@@ -54,7 +56,14 @@ const SinglePost = ({ data }) => {
             property="og:image"
             content={data.allStrapiArticle.nodes[0].Images.url}
           />,
-
+          <meta
+            property="og:image:height"
+            content={data.allStrapiArticle.nodes[0].Images.height}
+          />,
+          <meta
+            property="og:image:width"
+            content={data.allStrapiArticle.nodes[0].Images.width}
+          />,
           <meta name="twitter:card" content="summary" />,
           <meta
             name="twitter:title"
