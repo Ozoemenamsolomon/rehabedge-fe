@@ -46,7 +46,13 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
-      options: { trackingId: "G-8LXL13QNTX", head: false, respectDNT: true },
+      options: {
+        trackingId: "G-8LXL13QNTX",
+        defer: false,
+        head: false,
+        respectDNT: true,
+        enableWebVitalsTracking: true,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,

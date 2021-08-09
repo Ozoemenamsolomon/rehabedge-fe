@@ -137,10 +137,10 @@ const PostContent = styled.div`
 
   & h2 {
     padding-bottom: 0.2em;
-    border-bottom: 4px solid #2f4293;
+    border-bottom: 3px solid #2f4293;
   }
   & blockquote {
-    border-left: 4px solid #2f4293;
+    border-left: 4px solid #626fa7;
     padding-left: 1em;
   }
   & img {
