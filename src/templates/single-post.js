@@ -122,8 +122,10 @@ const SinglePost = ({ data }) => {
 export default SinglePost;
 
 const PostContent = styled.div`
-  text-align: justify;
   overflow-wrap: break-word;
+  & p {
+    text-align: justify;
+  }
   & * {
     margin: revert;
     padding: revert;
