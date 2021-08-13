@@ -67,7 +67,7 @@ const Footer = () => {
           <FooterLink
             target="blank"
             rel=" noopener"
-            href="https://www.solozo.page"
+            href="https://bit.ly/3iMfKXb"
           >
             Solozo
           </FooterLink>
